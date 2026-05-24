@@ -1,1 +1,324 @@
-<div style="color:#fff;font-size:32px">KOER KASS KALAD LINNUD</div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+  .gmA01-root,
+  .gmA01-root * {
+    box-sizing: border-box;
+  }
+
+  .gmA01-root {
+    /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308d2481.22191350_emu_1_WHAT_IS_IT.png");
+
+    /* ===== Siin saad tekste sättida ===== */
+
+    /* Fondi üldseaded (kõik tekstid) */
+    --font-main: "Roboto", sans-serif;
+    --font-weight-main: 300;
+
+    /* Rõhutused (2 eri accent värvi) */
+    --accent-orange: #ff6000;
+    --accent-white: #ffffff;
+
+    /* Tekstivärvid */
+    --h1-color: #ffffff;
+    --sub-color: #bbbbbb;
+    --body-color: #888888;
+    --bullet-color: #888888;
+
+    /* Pealkiri (H1) */
+    --h1-size: 50px;
+    --h1-line: 1.08;
+    --h1-letter: 0.03em;
+    --h1-metal-top: #ebebeb;
+    --h1-metal-mid: #bababa;
+    --h1-metal-low: #e2e2e2;
+
+    /* Subheadline (kui kasutad) */
+    --sub-size: 26px;
+    --sub-line: 1.25;
+    --sub-letter: 0.02em;
+
+    /* Tavaline tekst */
+    --body-size: 20px;
+    --body-line: 1.45;
+    --body-letter: 0.01em;
+
+    /* Bullet tekst */
+    --bullet-size: 20px;
+    --bullet-line: 1.2;
+    --bullet-letter: 0.01em;
+
+    /* Kogu tekstiploki asend */
+    --text-shift-x: 0px;
+    --text-shift-y: 30px;
+
+    /* Tekstirea maksimaalne pikkus (wrap kontroll) */
+    --text-max-width: 780px;
+
+    /* Vahed tekstiploki sees */
+    --h1-to-text-gap: 56px;
+    --p-gap: 18px;
+    --tight-gap: 8px;
+    --bullets-top-gap: 20px;
+    --bullets-bottom-gap: 32px;
+
+    /* Bullet-ploki horisontaalne nihe */
+    --bullets-offset-x: 20px;
+
+    /* Desktop kõrvuti vaade: teksti ja pildi suhe */
+    --block-gap: 34px;
+    --image-width-boost: 115%;
+    --image-overlap: 15%;
+
+    /* Stack-vaade (kui pilt hüppab teksti alla) */
+    --stack-gap: 18px;
+
+    /* Taust */
+    --bg-main: #111111;
+
+    width: 100%;
+    max-width: 100%;
+    background: var(--bg-main);
+    color: var(--body-color);
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .gmA01-root .gmA01-block {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(360px, 46%);
+    gap: var(--block-gap);
+    align-items: stretch;
+    min-height: 100vh;
+  }
+
+  .gmA01-root .gmA01-media {
+    grid-column: 1;
+    min-height: 100%;
+    position: relative;
+    width: var(--image-width-boost);
+    margin-right: calc(-1 * var(--image-overlap));
+    z-index: 1;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  .gmA01-root .gmA01-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to right,
+        rgba(17, 17, 17, 0) 7%,
+        rgba(17, 17, 17, 0.46) 62%,
+        rgba(17, 17, 17, 1) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0.9) 0%,
+        rgba(17, 17, 17, 0.42) 11%,
+        rgba(17, 17, 17, 0) 33%
+      ),
+      linear-gradient(
+        to top,
+        rgba(17, 17, 17, 1) 0%,
+        rgba(17, 17, 17, 0.58) 14%,
+        rgba(17, 17, 17, 0) 38%
+      );
+  }
+
+  .gmA01-root .gmA01-text {
+    grid-column: 2;
+    padding: 56px 100px 56px 32px;
+    max-width: var(--text-max-width);
+    position: relative;
+    z-index: 4;
+    transform: translate(var(--text-shift-x), var(--text-shift-y));
+  }
+
+  .gmA01-root .gmA01-h1 {
+    position: relative;
+    z-index: 6;
+    margin: 0 0 var(--h1-to-text-gap);
+    font-family: var(--font-main);
+    font-size: var(--h1-size);
+    line-height: var(--h1-line);
+    letter-spacing: var(--h1-letter);
+    color: transparent;
+    font-weight: var(--font-weight-main);
+    background: linear-gradient(
+      180deg,
+      var(--h1-metal-top) 0%,
+      var(--h1-metal-mid) 48%,
+      var(--h1-metal-low) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14),
+      0 2px 0 rgba(0, 0, 0, 0.34),
+      0 5px 9px rgba(0, 0, 0, 0.54);
+  }
+
+  .gmA01-root .gmA01-sub {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--sub-size);
+    line-height: var(--sub-line);
+    letter-spacing: var(--sub-letter);
+    color: var(--sub-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA01-root .gmA01-body {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--body-size);
+    line-height: var(--body-line);
+    letter-spacing: var(--body-letter);
+    color: var(--body-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA01-root .gmA01-bullets {
+    margin: var(--bullets-top-gap) 0 var(--bullets-bottom-gap) var(--bullets-offset-x);
+    padding: 0;
+    list-style: none;
+  }
+
+  .gmA01-root .gmA01-bullets li {
+    position: relative;
+    margin: 0 0 6px;
+    padding-left: 16px;
+    font-family: var(--font-main);
+    font-size: var(--bullet-size);
+    line-height: var(--bullet-line);
+    letter-spacing: var(--bullet-letter);
+    color: var(--bullet-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA01-root .gmA01-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+  }
+
+  .gmA01-root .gmA01-cta-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 24px;
+  }
+
+  .gmA01-root .gmA01-cta {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-white);
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .gmA01-root .gmA01-cta:hover {
+    background: var(--accent-orange);
+    color: #111111;
+  }
+
+  .gmA01-root .gmA01-accent-orange { color: var(--accent-orange); }
+  .gmA01-root .gmA01-accent-white { color: var(--accent-white); }
+
+  .gmA01-root .gmA01-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 1px 1px, rgba(205, 205, 205, 0.14) 1px, transparent 1.6px) 0 0 / 8px 8px,
+      radial-gradient(circle at 4px 4px, rgba(17, 17, 17, 0.3) 1.1px, transparent 1.7px) 0 0 / 9px 9px,
+      radial-gradient(circle at 2px 6px, rgba(165, 165, 165, 0.1) 0.8px, transparent 1.4px) 0 0 / 7px 7px,
+      radial-gradient(120% 46% at 30% 12%, rgba(220, 220, 220, 0.14), transparent 56%);
+    opacity: 0.62;
+  }
+
+  @media (max-width: 960px) {
+    .gmA01-root .gmA01-block {
+      grid-template-columns: 1fr;
+      gap: var(--stack-gap);
+      min-height: auto;
+    }
+
+    .gmA01-root .gmA01-media {
+      order: 2;
+      width: 100%;
+      margin-right: 0;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+      background-size: contain;
+      background-position: center top;
+      background-color: var(--bg-main);
+    }
+
+    .gmA01-root .gmA01-text {
+      grid-column: auto;
+      order: 1;
+      padding: 8px 16px 0;
+      max-width: none;
+      transform: translate(0, 0);
+    }
+
+    .gmA01-root .gmA01-media::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .gmA01-root .gmA01-h1 { font-size: 36px; }
+    .gmA01-root .gmA01-sub { font-size: 22px; }
+    .gmA01-root .gmA01-body,
+    .gmA01-root .gmA01-bullets li { font-size: 18px; }
+  }
+</style>
+
+<div class="gmA01-root">
+  <section class="gmA01-block">
+    <div class="gmA01-grain" aria-hidden="true"></div>
+    <div class="gmA01-media" aria-label="Groovemu what is it section"></div>
+    <div class="gmA01-text">
+      <h1 class="gmA01-h1"><span class="gmA01-accent-orange">GROOVEMU</span> TRANSFORMS REAPER INTO A REAL <span class="gmA01-accent-orange">ARRANGER</span> WORKSTATION</h1>
+      <p class="gmA01-body">Edit in REAPER. Perform live instantly.</p>
+      <p class="gmA01-body">Create fills, variations and full accompaniment arrangements directly on the REAPER timeline - then instantly play everything live with intelligent chord control and seamless arranger workflow.</p>
+      <ul class="gmA01-bullets">
+        <li>Edit with full DAW precision.</li>
+        <li>Total REAPER freedom &amp; flexibility.</li>
+        <li>Your instruments. Your effects.</li>
+        <li>Instant live performance.</li>
+        <li>Hardware arranger feel.</li>
+        <li>Zero setup &amp; no learning curve.</li>
+        <li>Demo project included</li>
+      </ul>
+      <div class="gmA01-cta-wrap">
+        <a class="gmA01-cta" href="#">Watch the video</a>
+        <a class="gmA01-cta" href="#">Grab it for free</a>
+        <a class="gmA01-cta" href="#">I'm too old for this shit</a>
+      </div>
+      <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
+    </div>
+  </section>
+</div>
+

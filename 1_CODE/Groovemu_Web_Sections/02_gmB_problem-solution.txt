@@ -292,7 +292,7 @@
     <div class="gmB02-grain" aria-hidden="true"></div>
 
     <div class="gmB02-text">
-      <h1 class="gmB02-h1">PROBLEM &amp; <span class="gmB02-accent-orange">SOLUTION</span></h1>
+      <h1 class="gmB02-h1">1 PROBLEM &amp; <span class="gmB02-accent-orange">SOLUTION</span></h1>
 
       <p class="gmB02-sub">AWESOME ARRANGEMENT... BUT NO WAY TO PLAY IT LIVE?</p>
       <p class="gmB02-body">Inside a DAW, you can build amazing loops, grooves and arrangements. But not truly perform them live. Trying different chord progressions, harmonies and musical ideas often becomes slow, disconnected and repetitive.</p>

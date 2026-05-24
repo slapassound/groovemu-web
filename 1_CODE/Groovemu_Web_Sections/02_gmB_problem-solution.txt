@@ -1,0 +1,317 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+  .gmB02-root,
+  .gmB02-root * {
+    box-sizing: border-box;
+  }
+
+  .gmB02-root {
+    /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30834d65.40374726_emu_2_PROBLEM__SOLUTION.png");
+
+    /* ===== Siin saad tekste sättida ===== */
+
+    /* Fondi üldseaded (kõik tekstid) */
+    --font-main: "Roboto", sans-serif;
+    --font-weight-main: 300;
+
+    /* Rõhutused (2 eri accent värvi) */
+    --accent-orange: #ff6000;
+    --accent-white: #ffffff;
+
+    /* Tekstivärvid */
+    --h1-color: #ffffff;
+    --sub-color: #bbbbbb;
+    --body-color: #888888;
+    --bullet-color: #888888;
+
+    /* Pealkiri (H1) */
+    --h1-size: 50px;
+    --h1-line: 1.08;
+    --h1-letter: 0.03em;
+    --h1-metal-top: #ebebeb;
+    --h1-metal-mid: #bababa;
+    --h1-metal-low: #e2e2e2;
+
+    /* Subheadline (kui kasutad) */
+    --sub-size: 26px;
+    --sub-line: 1.25;
+    --sub-letter: 0.02em;
+
+    /* Tavaline tekst */
+    --body-size: 20px;
+    --body-line: 1.45;
+    --body-letter: 0.01em;
+
+    /* Bullet tekst */
+    --bullet-size: 20px;
+    --bullet-line: 1.2;
+    --bullet-letter: 0.01em;
+
+    /* Kogu tekstiploki asend */
+    --text-shift-x: 0px;
+    --text-shift-y: 30px;
+
+    /* Tekstirea maksimaalne pikkus (wrap kontroll) */
+    --text-max-width: 780px;
+
+    /* Vahed tekstiploki sees */
+    --h1-to-text-gap: 56px;
+    --p-gap: 18px;
+    --tight-gap: 8px;
+    --bullets-top-gap: 20px;
+    --bullets-bottom-gap: 32px;
+
+    /* Bullet-ploki horisontaalne nihe */
+    --bullets-offset-x: 20px;
+
+    /* Desktop kõrvuti vaade: teksti ja pildi suhe */
+    --block-gap: 34px;
+    --image-width-boost: 115%;
+    --image-overlap: 15%;
+
+    /* Stack-vaade (kui pilt hüppab teksti alla) */
+    --stack-gap: 18px;
+
+    /* Taust */
+    --bg-main: #111111;
+
+    width: 100%;
+    max-width: 100%;
+    background: var(--bg-main);
+    color: var(--body-color);
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .gmB02-root .gmB02-block {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    gap: var(--block-gap);
+    align-items: stretch;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--bg-main);
+  }
+
+  .gmB02-root .gmB02-text {
+    grid-column: 1;
+    padding: 56px 24px 56px 100px;
+    max-width: var(--text-max-width);
+    position: relative;
+    z-index: 4;
+    transform: translate(var(--text-shift-x), var(--text-shift-y));
+  }
+
+  .gmB02-root .gmB02-media {
+    grid-column: 2;
+    position: relative;
+    z-index: 1;
+    width: var(--image-width-boost);
+    margin-left: calc(-1 * var(--image-overlap));
+    min-height: 100%;
+    line-height: 0;
+    overflow: hidden;
+    background: var(--bg-main);
+  }
+
+  .gmB02-root .gmB02-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    z-index: 0;
+  }
+
+  .gmB02-root .gmB02-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      linear-gradient(
+        to right,
+        rgba(17, 17, 17, 1) 0%,
+        rgba(17, 17, 17, 0.44) 38%,
+        rgba(17, 17, 17, 0) 72%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0.9) 0%,
+        rgba(17, 17, 17, 0.42) 11%,
+        rgba(17, 17, 17, 0) 33%
+      ),
+      linear-gradient(
+        to top,
+        rgba(17, 17, 17, 1) 0%,
+        rgba(17, 17, 17, 0.58) 14%,
+        rgba(17, 17, 17, 0) 38%
+      );
+  }
+
+  .gmB02-root .gmB02-h1 {
+    position: relative;
+    z-index: 6;
+    margin: 0 0 var(--h1-to-text-gap);
+    font-family: var(--font-main);
+    font-size: var(--h1-size);
+    line-height: var(--h1-line);
+    letter-spacing: var(--h1-letter);
+    color: transparent;
+    font-weight: var(--font-weight-main);
+    background: linear-gradient(
+      180deg,
+      var(--h1-metal-top) 0%,
+      var(--h1-metal-mid) 48%,
+      var(--h1-metal-low) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14),
+      0 2px 0 rgba(0, 0, 0, 0.34),
+      0 5px 9px rgba(0, 0, 0, 0.54);
+  }
+
+  .gmB02-root .gmB02-sub {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--sub-size);
+    line-height: var(--sub-line);
+    letter-spacing: var(--sub-letter);
+    color: var(--sub-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmB02-root .gmB02-body {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--body-size);
+    line-height: var(--body-line);
+    letter-spacing: var(--body-letter);
+    color: var(--body-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmB02-root .gmB02-bullets {
+    margin: var(--bullets-top-gap) 0 var(--bullets-bottom-gap) var(--bullets-offset-x);
+    padding: 0;
+    list-style: none;
+  }
+
+  .gmB02-root .gmB02-bullets li {
+    position: relative;
+    margin: 0 0 6px;
+    padding-left: 16px;
+    font-family: var(--font-main);
+    font-size: var(--bullet-size);
+    line-height: var(--bullet-line);
+    letter-spacing: var(--bullet-letter);
+    color: var(--bullet-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmB02-root .gmB02-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+  }
+
+  .gmB02-root .gmB02-accent-orange { color: var(--accent-orange); }
+  .gmB02-root .gmB02-accent-white { color: var(--accent-white); }
+
+  .gmB02-root .gmB02-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 1px 1px, rgba(205, 205, 205, 0.14) 1px, transparent 1.6px) 0 0 / 8px 8px,
+      radial-gradient(circle at 4px 4px, rgba(17, 17, 17, 0.3) 1.1px, transparent 1.7px) 0 0 / 9px 9px,
+      radial-gradient(circle at 2px 6px, rgba(165, 165, 165, 0.1) 0.8px, transparent 1.4px) 0 0 / 7px 7px,
+      radial-gradient(120% 46% at 30% 12%, rgba(220, 220, 220, 0.14), transparent 56%);
+    opacity: 0.62;
+  }
+
+  @media (max-width: 960px) {
+    .gmB02-root .gmB02-block {
+      grid-template-columns: 1fr;
+      gap: var(--stack-gap);
+      min-height: auto;
+    }
+
+    .gmB02-root .gmB02-text {
+      grid-column: auto;
+      order: 1;
+      padding: 8px 16px 0;
+      max-width: none;
+      transform: translate(0, 0);
+    }
+
+    .gmB02-root .gmB02-media {
+      grid-column: auto;
+      order: 2;
+      width: 100%;
+      margin-left: 0;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+    }
+
+    .gmB02-root .gmB02-media::before {
+      background-size: contain;
+      background-position: center top;
+    }
+
+    .gmB02-root .gmB02-media::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .gmB02-root .gmB02-h1 { font-size: 36px; }
+    .gmB02-root .gmB02-sub { font-size: 22px; }
+    .gmB02-root .gmB02-body,
+    .gmB02-root .gmB02-bullets li { font-size: 18px; }
+  }
+</style>
+
+<div class="gmB02-root">
+  <section class="gmB02-block">
+    <div class="gmB02-grain" aria-hidden="true"></div>
+
+    <div class="gmB02-text">
+      <h1 class="gmB02-h1">PROBLEM &amp; <span class="gmB02-accent-orange">SOLUTION</span></h1>
+
+      <p class="gmB02-sub">AWESOME ARRANGEMENT... BUT NO WAY TO PLAY IT LIVE?</p>
+      <p class="gmB02-body">Inside a DAW, you can build amazing loops, grooves and arrangements. But not truly perform them live. Trying different chord progressions, harmonies and musical ideas often becomes slow, disconnected and repetitive.</p>
+      <p class="gmB02-sub">YOUR ARRANGEMENT JUST DOES NOT FEEL ALIVE.</p>
+      <p class="gmB02-body">GROOVEMU turns static arrangements into a live creative experience and lets you play them like a real instrument. Instead of constantly stopping, editing and replaying, you can explore your musical ideas naturally while the arrangement keeps playing.</p>
+
+      <ul class="gmB02-bullets">
+        <li>Try different harmonies instantly.</li>
+        <li>Perform accompaniment live.</li>
+        <li>Explore song ideas naturally.</li>
+        <li>Switch variations in real time.</li>
+      </ul>
+
+      <p class="gmB02-sub">YOUR ARRANGEMENT FINALLY FEELS ALIVE.</p>
+      <p class="gmB02-body">And on top of that...</p>
+      <p class="gmB02-body">Traditional arranger systems are often expensive, closed and difficult to customize. Software alternatives usually feel limited and disconnected from modern production workflow. And worst of all - style editing in traditional arrangers can be a real pain.</p>
+      <p class="gmB02-body">GROOVEMU solves all this inside REAPER.</p>
+    </div>
+
+    <div class="gmB02-media" aria-label="Groovemu problem and solution section"></div>
+  </section>
+</div>

@@ -300,7 +300,7 @@
     <div class="gmA01-grain" aria-hidden="true"></div>
     <div class="gmA01-media" aria-label="Groovemu what is it section"></div>
     <div class="gmA01-text">
-      <h1 class="gmA01-h1"><span class="gmA01-accent-orange">GROOVEMU</span> TRANSFORMS REAPER INTO A REAL <span class="gmA01-accent-orange">ARRANGER</span> WORKSTATION</h1>
+      <h1 class="gmA01-h1"><span class="gmA01-accent-orange">GROOVEMU</span> TRANSFORMS REAPER INTO A REAL <span class="gmA01-accent-orange">ARRANGER</span> WORKSTATION???</h1>
       <p class="gmA01-body">Edit in REAPER. Perform live instantly.</p>
       <p class="gmA01-body">Create fills, variations and full accompaniment arrangements directly on the REAPER timeline - then instantly play everything live with intelligent chord control and seamless arranger workflow.</p>
       <ul class="gmA01-bullets">

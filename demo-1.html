@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GROOVEMU Demo 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="block block--what">
+        <div class="what__media">
+          <img
+            class="what__gif"
+            src="Groovemu web media/Groovemu GIF/emu_GIF_main_REAPER_ENGINE.gif"
+            alt="Groovemu REAPER Engine preview"
+          />
+          <video
+            class="what__video"
+            id="demoVideo"
+            src="Groovemu web media/Groovemu VIDEO/the-emu-in-closeup-turns-its-head-smoothly-to-the-.mp4"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
+          <button class="what__play" id="playButton" aria-label="Play demo video">
+            PLAY VIDEO
+          </button>
+        </div>
+        <div class="what__text">
+          <h1>
+            GROOVEMU TRANSFORMS REAPER INTO A
+            <span>REAL ARRANGER</span>
+            WORKSTATION
+          </h1>
+          <p class="lead">Edit in REAPER. Perform live instantly.</p>
+          <p>
+            Create fills, variations and full accompaniment arrangements directly
+            on the REAPER timeline, then instantly play everything live with
+            intelligent chord control and seamless arranger workflow.
+          </p>
+          <ul>
+            <li>Edit with full DAW precision.</li>
+            <li>Total REAPER freedom and flexibility.</li>
+            <li>Your instruments. Your effects.</li>
+            <li>Instant live performance.</li>
+            <li>Hardware arranger feel.</li>
+            <li>Zero setup and no learning curve.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="block block--between">
+        <img
+          class="what__inline-gif"
+          src="Groovemu web media/Groovemu GIF/emu_GIF_edit_in_reaper_and_play_live.gif"
+          alt="Edit in Reaper and play live preview"
+        />
+      </section>
+    </main>
+
+    <script>
+      const playButton = document.getElementById("playButton");
+      const demoVideo = document.getElementById("demoVideo");
+
+      playButton.addEventListener("click", () => {
+        playButton.classList.add("is-hidden");
+        demoVideo.classList.add("is-visible");
+        demoVideo.play().catch(() => {});
+      });
+    </script>
+  </body>
+</html>

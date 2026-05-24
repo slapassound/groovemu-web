@@ -1,0 +1,92 @@
+
+
+MODERN DARK UI for AUDIO nerds
+Dark cinematic atmosphere
+Premium audio workstation vibe
+Futuristic hardware/software feeling
+#111111 main background color
+
+TYPOGRAPHY
+
+Roboto Light 300
+BIG headline: 80 / 90 / spacing 5
+SUB headline: 28 / 34 / spacing 2
+Regular text: 20 / 24 / spacing 1
+Very airy typography
+Large spacing and breathing room
+Typography drives the experience
+
+TEXT COLORS
+
+Main text: #888888
+Important white text: #FFFFFF
+Accent/highlight words: #ff6000
+
+LINKS
+
+Blue
+Underlined
+Old internet / underground software vibe
+
+BULLET POINTS
+
+Tiny orange dots #ff6000
+Minimalistic
+Two columns if longer list
+
+IMAGE STYLE
+
+Large cinematic images
+Darkened
+Embossed / matte / textured feel
+Subtle micro texture / printed paper vibe
+Not clean digital photos
+Ambient atmosphere images
+
+IMAGE PLACEMENT
+
+Mostly left/right aligned
+Sometimes top/bottom/center for variation
+Images smoothly fade into #111111 background
+Never hard edges
+Text area always readable
+Image visible strongly in its own area
+Image becomes VERY subtle under text area
+Only faint fragments visible under text
+
+TEXT OVER IMAGE
+
+Text always priority
+Image under text must never compete
+Fade area under text must be dark and soft
+
+CHARACTERS / PEOPLE
+
+Often isolated on alpha
+No messy backgrounds
+Cinematic lighting
+Poster/game-character layer feeling
+
+BOXES / PANELS
+
+Not SaaS cards
+Dark translucent panels
+Soft 3D depth
+Subtle glow
+Hardware instrument panel vibe
+
+GENERAL FEELING
+
+Audio laboratory
+Experimental music machine
+Obsessive audio nerd engineering
+Cinematic scrolling experience
+More like a film/game/music workstation
+Less like a startup landing page
+
+MOBILE
+
+Must work beautifully on mobile
+Layouts adapt naturally
+Text readability always priority
+Mobile should not feel like squeezed desktop layout

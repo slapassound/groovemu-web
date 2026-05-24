@@ -1,0 +1,14 @@
+Small chart for setings (MODE, TIMING, CHORD SWITCH):
+bass seting
+ chromatic, instant, stop
+
+"chord like" pluck seting
+ chord, instant, stop 
+
+Pad setting
+chord, instant, retrigger
+
+Mono leads seting
+chromatic, instant, retrigger
+
+* For pads and leads, use a longer instrument attack, so the chord changes transition more smoothly.

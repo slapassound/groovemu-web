@@ -12,13 +12,8 @@
     el.innerHTML = html;
   }
 
-  if (window.GM_SECTIONS) {
-    render();
-    return;
-  }
-
   const s = document.createElement("script");
-  s.src = "https://cdn.jsdelivr.net/gh/slapassound/groovemu-web@main/sections.js";
+  s.src = "https://cdn.jsdelivr.net/gh/slapassound/groovemu-web@main/sections.js?v=" + Date.now();
   s.onload = render;
   document.head.appendChild(s);
 })();

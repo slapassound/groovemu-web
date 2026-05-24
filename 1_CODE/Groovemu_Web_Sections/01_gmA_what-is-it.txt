@@ -167,6 +167,23 @@
       0 5px 9px rgba(0, 0, 0, 0.54);
   }
 
+  .gmA01-root .gmA01-h1 .gmA01-accent-orange {
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      #ff6b1f 0%,
+      #ff5600 50%,
+      #bf3f00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 126, 78, 0.2),
+      0 2px 0 rgba(0, 0, 0, 0.3),
+      0 5px 9px rgba(0, 0, 0, 0.5);
+  }
+
   .gmA01-root .gmA01-sub {
     margin: 0 0 var(--p-gap);
     font-family: var(--font-main);

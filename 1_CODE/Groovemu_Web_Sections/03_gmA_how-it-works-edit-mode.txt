@@ -277,6 +277,7 @@
     <div class="gmA03-media" aria-label="Groovemu edit mode section"></div>
     <div class="gmA03-text">
       <h1 class="gmA03-h1">HOW IT WORKS | <span class="gmA03-accent-orange">EDIT</span> MODE</h1>
+<h1 class="gmA03-h1">HOW IT WORKS | <span class="gmA03-accent-orange">EDIT</span> MODE</h1>
       <p class="gmA03-body">GROOVEMU is built around two connected worlds:</p>
       <p class="gmA03-sub">EDIT MODE &amp; LIVE MODE</p>
       <p class="gmA03-body">Powered by:</p>

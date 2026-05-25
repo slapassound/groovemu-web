@@ -8,7 +8,7 @@
 
   .gmB10-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30857fc8.63546194_emu_10_ARRANGER_WORLD.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00161e4.47673414_2_emu_10_ARRANGERWORLD.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -330,3 +330,4 @@
     <div class="gmB10-media" aria-label="Groovemu arranger world section"></div>
   </section>
 </div>
+

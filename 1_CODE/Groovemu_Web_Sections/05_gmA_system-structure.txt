@@ -8,7 +8,7 @@
 
   .gmA05-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308c5b07.50389021_emu_5_SYSTEM_STRUCTURE.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0162613.51013679_2_emu_5_SYSTEMSTRUCTURE.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -315,3 +315,4 @@
     </div>
   </section>
 </div>
+

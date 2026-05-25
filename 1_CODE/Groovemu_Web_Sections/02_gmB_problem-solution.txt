@@ -8,7 +8,7 @@
 
   .gmB02-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30834d65.40374726_emu_2_PROBLEM__SOLUTION.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0020060.45857897_2_emu_2_PROBLEMSOLUTION.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -332,3 +332,4 @@
     <div class="gmB02-media" aria-label="Groovemu problem and solution section"></div>
   </section>
 </div>
+

@@ -8,7 +8,7 @@
 
   .gmA07-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308faa63.88616083_emu_7_SETUP.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb015fc34.12189839_2_emu_7_SETUP.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -340,3 +340,4 @@
     </div>
   </section>
 </div>
+

@@ -8,7 +8,7 @@
 
   .gmB12-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b37ae2629.73593874_emu_12_PRICE__HOW_TO_GET.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb2dd0323.49684567_2_emu_12_PRICEHOWTOGET.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -337,3 +337,4 @@
     <div class="gmB12-media" aria-label="Groovemu price and how to get section"></div>
   </section>
 </div>
+

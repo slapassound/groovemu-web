@@ -271,6 +271,71 @@
     background: var(--accent-orange);
     color: #111111;
   }
+  .gmB14-root .gmB14-popurii-toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gmB14-root .gmB14-popurii-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+
+  .gmB14-root .gmB14-popurii-toggle:checked ~ .gmB14-popurii-modal {
+    display: flex;
+  }
+
+  .gmB14-root .gmB14-popurii-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .gmB14-root .gmB14-popurii-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+
+  .gmB14-root .gmB14-popurii-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+
+  .gmB14-root .gmB14-popurii-gif {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
 
   .gmB14-root .gmB14-grain {
     position: absolute;

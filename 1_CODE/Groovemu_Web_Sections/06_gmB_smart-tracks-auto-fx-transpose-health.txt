@@ -269,15 +269,33 @@
     align-items: center;
     justify-content: center;
     padding: 22px;
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(2px);
   }
 
-  .gmB06-root .gmB06-modal.is-open {
+  .gmB06-root .gmB06-modal-toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gmB06-root .gmB06-modal-toggle:checked ~ .gmB06-modal {
     display: flex;
   }
 
+  .gmB06-root .gmB06-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
   .gmB06-root .gmB06-modal-card {
+    position: relative;
+    z-index: 2;
     width: min(860px, 100%);
     background: linear-gradient(160deg, #191919 0%, #121212 100%);
     border: 1px solid rgba(255, 96, 0, 0.4);
@@ -443,7 +461,7 @@
 
       <p class="gmB06-sub">TRANSPOSE</p>
       <p class="gmB06-body">When your MIDI items first interact with Groovemu Live Transposer, the system automatically selects the most suitable Transpose Mode, Timing and Chord Switch settings for you. You can always fine-tune them later to match your own workflow.</p>
-      <p class="gmB06-body"><span class="gmB06-cheat-trigger" id="gmB06OpenCheat">Check the transpose cheat sheet.</span></p>
+      <p class="gmB06-body"><label class="gmB06-cheat-trigger" for="gmB06ModalToggle">Check the transpose cheat sheet.</label></p>
 
       <p class="gmB06-sub">HEALTH SYSTEM</p>
       <p class="gmB06-body">Starting from an empty REAPER project or accidentally broke something?</p>
@@ -465,11 +483,13 @@
     <div class="gmB06-media" aria-label="Groovemu smart tracks section"></div>
   </section>
 
-  <div class="gmB06-modal" id="gmB06Modal" aria-hidden="true">
+  <input class="gmB06-modal-toggle" type="checkbox" id="gmB06ModalToggle" />
+  <div class="gmB06-modal">
+    <label class="gmB06-modal-backdrop" for="gmB06ModalToggle" aria-label="Close popup"></label>
     <div class="gmB06-modal-card">
       <div class="gmB06-modal-top">
         <h3 class="gmB06-modal-title">Transpose Cheat Sheet</h3>
-        <button class="gmB06-modal-close" id="gmB06CloseModal" type="button" aria-label="Close popup">X</button>
+        <label class="gmB06-modal-close" for="gmB06ModalToggle" aria-label="Close popup">X</label>
       </div>
 
       <table class="gmB06-modal-table">
@@ -517,44 +537,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  (function () {
-    var root = document.querySelector(".gmB06-root");
-    if (!root) return;
-
-    var openBtn = root.querySelector("#gmB06OpenCheat");
-    var modal = root.querySelector("#gmB06Modal");
-    var closeBtn = root.querySelector("#gmB06CloseModal");
-    var modalCard = root.querySelector(".gmB06-modal-card");
-    if (!openBtn || !modal || !closeBtn || !modalCard) return;
-
-    function openModal() {
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    }
-
-    function closeModal() {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-    }
-
-    openBtn.addEventListener("click", function () {
-      openModal();
-    });
-
-    closeBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      closeModal();
-    });
-
-    modal.addEventListener("click", function (e) {
-      if (!modalCard.contains(e.target)) {
-        closeModal();
-      }
-    });
-  })();
-</script>
 
 
 

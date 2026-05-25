@@ -273,7 +273,13 @@
     backdrop-filter: blur(2px);
   }
 
-  .gmB06-root .gmB06-modal.is-open {
+  .gmB06-root .gmB06-modal-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gmB06-root .gmB06-modal-toggle:checked ~ .gmB06-modal {
     display: flex;
   }
 
@@ -362,6 +368,8 @@
   }
 
   .gmB06-root .gmB06-download-btn {
+    display: inline-block;
+    text-decoration: none;
     border: 1px solid rgba(255, 96, 0, 0.65);
     background: #191919;
     color: #ff6000;
@@ -438,7 +446,7 @@
 
       <p class="gmB06-sub">TRANSPOSE</p>
       <p class="gmB06-body">When your MIDI items first interact with Groovemu Live Transposer, the system automatically selects the most suitable Transpose Mode, Timing and Chord Switch settings for you. You can always fine-tune them later to match your own workflow.</p>
-      <p class="gmB06-body"><span class="gmB06-cheat-trigger" id="gmB06OpenCheat">Check the transpose cheat sheet.</span></p>
+      <p class="gmB06-body"><label class="gmB06-cheat-trigger" for="gmB06ModalToggle">Check the transpose cheat sheet.</label></p>
 
       <p class="gmB06-sub">HEALTH SYSTEM</p>
       <p class="gmB06-body">Starting from an empty REAPER project or accidentally broke something?</p>
@@ -460,11 +468,12 @@
     <div class="gmB06-media" aria-label="Groovemu smart tracks section"></div>
   </section>
 
-  <div class="gmB06-modal" id="gmB06Modal" aria-hidden="true">
-    <div class="gmB06-modal-card" id="gmB06ModalCard">
+  <input class="gmB06-modal-toggle" type="checkbox" id="gmB06ModalToggle" />
+  <label class="gmB06-modal" for="gmB06ModalToggle">
+    <label class="gmB06-modal-card" for="gmB06ModalToggle">
       <div class="gmB06-modal-top">
         <h3 class="gmB06-modal-title">Transpose Cheat Sheet</h3>
-        <button class="gmB06-modal-close" id="gmB06CloseModal" type="button" aria-label="Close popup">X</button>
+        <label class="gmB06-modal-close" for="gmB06ModalToggle" aria-label="Close popup">X</label>
       </div>
 
       <table class="gmB06-modal-table">
@@ -507,69 +516,11 @@
       <p class="gmB06-modal-note">For pads and leads, use a longer instrument attack so chord transitions feel smoother.</p>
 
       <div class="gmB06-modal-actions">
-        <button class="gmB06-download-btn" id="gmB06DownloadCsv" type="button">Download CSV</button>
+        <a class="gmB06-download-btn" href="data:text/csv;charset=utf-8,Instrument%20Type%2CMode%2CTiming%2CChord%20Switch%0ABass%20%26%20Arpeggio%2CChromatic%2CInstant%2CStop%0A%22Chord-like%22%20Pluck%2CChord%2CInstant%2CStop%0APad%2CChord%2CInstant%2CRetrigger%0AMono%20Leads%2CChromatic%2CInstant%2CRetrigger" download="groovemu-transpose-cheat-sheet.csv">Download CSV</a>
       </div>
-    </div>
-  </div>
+    </label>
+  </label>
 </div>
-
-<script>
-  (function () {
-    var root = document.querySelector(".gmB06-root");
-    if (!root) return;
-
-    var openBtn = root.querySelector("#gmB06OpenCheat");
-    var modal = root.querySelector("#gmB06Modal");
-    var modalCard = root.querySelector("#gmB06ModalCard");
-    var closeBtn = root.querySelector("#gmB06CloseModal");
-    var downloadBtn = root.querySelector("#gmB06DownloadCsv");
-
-    if (!openBtn || !modal || !modalCard || !closeBtn || !downloadBtn) return;
-
-    function openModal() {
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    }
-
-    function closeModal() {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-    }
-
-    openBtn.addEventListener("click", openModal);
-    closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
-
-    modalCard.addEventListener("click", function (event) {
-      if (event.target.closest("#gmB06DownloadCsv") || event.target.closest("#gmB06CloseModal")) {
-        return;
-      }
-      closeModal();
-    });
-
-    downloadBtn.addEventListener("click", function () {
-      var csv = [
-        "Instrument Type,Mode,Timing,Chord Switch",
-        "Bass & Arpeggio,Chromatic,Instant,Stop",
-        "\"Chord-like\" Pluck,Chord,Instant,Stop",
-        "Pad,Chord,Instant,Retrigger",
-        "Mono Leads,Chromatic,Instant,Retrigger"
-      ].join("\\n");
-      var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      var link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "groovemu-transpose-cheat-sheet.csv";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(link.href);
-    });
-  })();
-</script>
 
 
 

@@ -1,6 +1,6 @@
 1. WHAT IS IT
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308d2481.22191350_emu_1_WHAT_IS_IT.png
-systeme_A_PIC_LEFT
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png
 --------------------------------------------------------------------------------- 
 GROOVEMU TRANSFORMS REAPER INTO A REAL ARRANGER WORKSTATION
 
@@ -25,8 +25,8 @@ BUILT FOR REAPER. MADE FOR WINDOWS.
 
 
 2. PROBLEM & SOLUTION
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30834d65.40374726_emu_2_PROBLEM__SOLUTION.png
-systeme_B_PIC_RIGHT
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0020060.45857897_2_emu_2_PROBLEMSOLUTION.png
 --------------------------------------------------------------------------------- 
 PROBLEM & SOLUTION
 
@@ -59,8 +59,8 @@ GROOVEMU solves all this inside REAPER.
 
 
 3. HOW IT WORKS? EDIT MODE
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b3089d713.65090687_emu_3_HOW_IT_WORKS_EDIT_MODE.png
-systeme_A_PIC_LEFT  
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0014582.27104758_2_emu_3_HOWITWORKSEDITMODE.png
 ---------------------------------------------------------------------------------
 HOW IT WORKS | EDIT MODE
 
@@ -91,8 +91,8 @@ Build:
 
 
 4. HOW IT WORKS? LIVE MODE
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30903133.04235255_emu_4_HOW_IT_WORKS_LIVE_MODE.png
-systeme_B_PIC_RIGHT
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecaff3cbe5.74975222_2_emu_4_HOWITWORKS_LIVEMODE.png
 ---------------------------------------------------------------------------------
 HOW IT WORKS | LIVE MODE
 
@@ -133,8 +133,8 @@ In Live Mode, all arranger playback happens inside the PLAYER.
 
 
 5. SYSTEM STRUCTURE
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308c5b07.50389021_emu_5_SYSTEM_STRUCTURE.png
-systeme_A_PIC_LEFT 
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0162613.51013679_2_emu_5_SYSTEMSTRUCTURE.png
 --------------------------------------------------------------------------------- 
 SYSTEM STRUCTURE | ALL PREPARED. CONNECTED. READY TO JAM. 
 
@@ -163,8 +163,8 @@ The demo projects are also very handy as a starting point for creating your own 
 
 
 6. SMART TRACKS - AUTO FX & TRANSPOSE MODE & HEALTH
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308f1550.10207283_emu_6_SMART_TRACKS.png
-systeme_B_PIC_RIGHT
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb002d0f0.45644222_2_emu_6_SMARTTRACKS.png
 --------------------------------------------------------------------------------- 
 SMART TRACKS & HEALTH SYSTEM
 
@@ -204,8 +204,8 @@ This includes:
 
 
 7. SETUP
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308faa63.88616083_emu_7_SETUP.png
-systeme_A_PIC_LEFT
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb015fc34.12189839_2_emu_7_SETUP.png
 ---------------------------------------------------------------------------------
 SETUP | PLUG. PLAY. DONE. 
 
@@ -237,8 +237,8 @@ And if something ever breaks, the HEALTH system takes care of the rest.
 
 
 8. EXTRAORDINARITY
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b308c6049.35733521_emu_8_EXTRAORDINARITY.png
-systeme_B_PIC_RIGHT 
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb013fd41.06469915_2_emu_8_EXTRAORDINARITY.png
 ---------------------------------------------------------------------------------
 REAPER WAS NEVER SUPPOSED TO DO THIS 😄 
 
@@ -265,8 +265,8 @@ Unique. Powerful. Unlike anything else created before.
 
 
 9. BENEFITS
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30917934.51148531_emu_9_BENEFITS.png
-systeme_A_PIC_LEFT 
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb013fe01.82013375_2_emu_9_BENEFITS.png
 ---------------------------------------------------------------------------------
 WHY GROOVEMU FEELS SO DIFFERENT 
 
@@ -291,8 +291,8 @@ Even REAPER itself can be used for free as long as you need.
 
 
 10. ARRANGER WORLD
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b30857fc8.63546194_emu_10_ARRANGER_WORLD.png
-systeme_B_PIC_RIGHT 
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00161e4.47673414_2_emu_10_ARRANGERWORLD.png
 ---------------------------------------------------------------------------------
 ARRANGER WORLD | TURNING REAPER INTO A LIVE INSTRUMENT 
 
@@ -323,8 +323,8 @@ My favourite Woody introduces Yamaha & Korg arranger workflow and song styles �
 
 
 11. FOR WHOM
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b374b0815.43689475_emu_11_FOR_WHOM.png
-systeme_A_PIC_LEFT 
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb27c8343.72255407_2_emu_11_FORWHOM.png
 ---------------------------------------------------------------------------------
 WHO IS GROOVEMU FOR? 
 
@@ -354,8 +354,8 @@ GROOVEMU was made for you.
 
 
 12. PRICE & HOW TO GET
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b37ae2629.73593874_emu_12_PRICE__HOW_TO_GET.png
-systeme_B_PIC_RIGHT 
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb2dd0323.49684567_2_emu_12_PRICEHOWTOGET.png
 ---------------------------------------------------------------------------------
 COMPLETELY FREE FOR YOU!
 
@@ -388,8 +388,8 @@ And of course, if you enjoy GROOVEMU and want to support the project, you are al
 
 
 13. STORY BEHIND IT
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b37ce2079.00606228_emu_13_STORY_BEHIND_IT.png
-systeme_A_PIC_LEFT 
+ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb2e1d984.07586492_2_emu_13_STORYBEHINDIT.png
 ---------------------------------------------------------------------------------
 8 YEARS OF EXPERIMENTS & FAILURES | WHY? 
 
@@ -413,8 +413,8 @@ A real live arranger workflow inside REAPER was born.
 
 
 14. UPDATES, SHARING, CONTACTS, CTA
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a109b37e096c0.11812840_emu_14_UPDATES_SHARINGCONTACTS_CTA.png
-systeme_B_PIC_RIGHT  
+ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb3060333.87852720_2_emu_14_UPDATESSHARINGCONTACTSCTA.png
 ---------------------------------------------------------------------------------
 ALWAYS EVOLVING | HELP THE EMU SPREAD THE MADNESS 😄 
 

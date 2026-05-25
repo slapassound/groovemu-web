@@ -1,5 +1,6 @@
-Small chart for setings (MODE, TIMING, CHORD SWITCH):
-bass seting
+Small chart for transposition setings (MODE, TIMING, CHORD SWITCH):
+
+bass & arpeggio seting
  chromatic, instant, stop
 
 "chord like" pluck seting

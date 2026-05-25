@@ -248,6 +248,128 @@
 
   .gmB06-root .gmB06-accent-orange { color: var(--accent-orange); }
   .gmB06-root .gmB06-accent-white { color: var(--accent-white); }
+  .gmB06-root .gmB06-cheat-trigger {
+    display: inline-block;
+    border-bottom: 1px solid rgba(255, 96, 0, 0.45);
+    color: #d8d8d8;
+    cursor: pointer;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .gmB06-root .gmB06-cheat-trigger:hover {
+    color: #ffffff;
+    border-color: rgba(255, 96, 0, 0.9);
+  }
+
+  .gmB06-root .gmB06-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+  }
+
+  .gmB06-root .gmB06-modal.is-open {
+    display: flex;
+  }
+
+  .gmB06-root .gmB06-modal-card {
+    width: min(860px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 20px 20px 16px;
+    color: #d4d4d4;
+  }
+
+  .gmB06-root .gmB06-modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .gmB06-root .gmB06-modal-title {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    color: #f0f0f0;
+    font-weight: 400;
+  }
+
+  .gmB06-root .gmB06-modal-close {
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    background: #1e1e1e;
+    color: #ff6000;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .gmB06-root .gmB06-modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #101010;
+  }
+
+  .gmB06-root .gmB06-modal-table thead th {
+    background: #1c1c1c;
+    color: #ff6000;
+    font-family: var(--font-main);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 96, 0, 0.35);
+  }
+
+  .gmB06-root .gmB06-modal-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d6d6d6;
+    font-family: var(--font-main);
+    font-size: 15px;
+  }
+
+  .gmB06-root .gmB06-modal-table tbody tr:hover td {
+    background: rgba(255, 96, 0, 0.06);
+  }
+
+  .gmB06-root .gmB06-modal-note {
+    margin: 12px 0 0;
+    color: #a9a9a9;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .gmB06-root .gmB06-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+  }
+
+  .gmB06-root .gmB06-download-btn {
+    border: 1px solid rgba(255, 96, 0, 0.65);
+    background: #191919;
+    color: #ff6000;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+  }
 
   .gmB06-root .gmB06-grain {
     position: absolute;
@@ -316,7 +438,7 @@
 
       <p class="gmB06-sub">TRANSPOSE</p>
       <p class="gmB06-body">When your MIDI items first interact with Groovemu Live Transposer, the system automatically selects the most suitable Transpose Mode, Timing and Chord Switch settings for you. You can always fine-tune them later to match your own workflow.</p>
-      <p class="gmB06-body">Check the transpose cheat sheet.</p>
+      <p class="gmB06-body"><span class="gmB06-cheat-trigger" id="gmB06OpenCheat">Check the transpose cheat sheet.</span></p>
 
       <p class="gmB06-sub">HEALTH SYSTEM</p>
       <p class="gmB06-body">Starting from an empty REAPER project or accidentally broke something?</p>
@@ -337,7 +459,117 @@
 
     <div class="gmB06-media" aria-label="Groovemu smart tracks section"></div>
   </section>
+
+  <div class="gmB06-modal" id="gmB06Modal" aria-hidden="true">
+    <div class="gmB06-modal-card" id="gmB06ModalCard">
+      <div class="gmB06-modal-top">
+        <h3 class="gmB06-modal-title">Transpose Cheat Sheet</h3>
+        <button class="gmB06-modal-close" id="gmB06CloseModal" type="button" aria-label="Close popup">X</button>
+      </div>
+
+      <table class="gmB06-modal-table">
+        <thead>
+          <tr>
+            <th>Instrument Type</th>
+            <th>Mode</th>
+            <th>Timing</th>
+            <th>Chord Switch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bass &amp; Arpeggio</td>
+            <td>Chromatic</td>
+            <td>Instant</td>
+            <td>Stop</td>
+          </tr>
+          <tr>
+            <td>"Chord-like" Pluck</td>
+            <td>Chord</td>
+            <td>Instant</td>
+            <td>Stop</td>
+          </tr>
+          <tr>
+            <td>Pad</td>
+            <td>Chord</td>
+            <td>Instant</td>
+            <td>Retrigger</td>
+          </tr>
+          <tr>
+            <td>Mono Leads</td>
+            <td>Chromatic</td>
+            <td>Instant</td>
+            <td>Retrigger</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="gmB06-modal-note">For pads and leads, use a longer instrument attack so chord transitions feel smoother.</p>
+
+      <div class="gmB06-modal-actions">
+        <button class="gmB06-download-btn" id="gmB06DownloadCsv" type="button">Download CSV</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  (function () {
+    var root = document.querySelector(".gmB06-root");
+    if (!root) return;
+
+    var openBtn = root.querySelector("#gmB06OpenCheat");
+    var modal = root.querySelector("#gmB06Modal");
+    var modalCard = root.querySelector("#gmB06ModalCard");
+    var closeBtn = root.querySelector("#gmB06CloseModal");
+    var downloadBtn = root.querySelector("#gmB06DownloadCsv");
+
+    if (!openBtn || !modal || !modalCard || !closeBtn || !downloadBtn) return;
+
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    modalCard.addEventListener("click", function (event) {
+      if (event.target.closest("#gmB06DownloadCsv") || event.target.closest("#gmB06CloseModal")) {
+        return;
+      }
+      closeModal();
+    });
+
+    downloadBtn.addEventListener("click", function () {
+      var csv = [
+        "Instrument Type,Mode,Timing,Chord Switch",
+        "Bass & Arpeggio,Chromatic,Instant,Stop",
+        "\"Chord-like\" Pluck,Chord,Instant,Stop",
+        "Pad,Chord,Instant,Retrigger",
+        "Mono Leads,Chromatic,Instant,Retrigger"
+      ].join("\\n");
+      var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      var link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "groovemu-transpose-cheat-sheet.csv";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    });
+  })();
+</script>
 
 
 

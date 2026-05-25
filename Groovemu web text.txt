@@ -134,7 +134,7 @@ In Live Mode, all arranger playback happens inside the PLAYER.
 
 5. SYSTEM STRUCTURE
 ASSET_1 BGR Picture [systeme_A_PIC_LEFT]
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0162613.51013679_2_emu_5_SYSTEMSTRUCTURE.png
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a1428b89622f0.96852649_2_emu_5_SYSTEMSTRUCTURE.png
 --------------------------------------------------------------------------------- 
 SYSTEM STRUCTURE | ALL PREPARED. CONNECTED. READY TO JAM. 
 
@@ -164,7 +164,7 @@ The demo projects are also very handy as a starting point for creating your own 
 
 6. SMART TRACKS - AUTO FX & TRANSPOSE MODE & HEALTH
 ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb002d0f0.45644222_2_emu_6_SMARTTRACKS.png
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a1428b8964037.12358305_2_emu_6_SMARTTRACKS.png
 --------------------------------------------------------------------------------- 
 SMART TRACKS & HEALTH SYSTEM
 
@@ -439,3 +439,4 @@ Marko Karja  |  SlapAsSound  |  ESTONIA  |  +372 5119771
 
 
 [add BUTTON A]:  "Nothing to lose. Let’s grab it!"  |  [add BUTTON B]:  "I’m too old for this shit."
+

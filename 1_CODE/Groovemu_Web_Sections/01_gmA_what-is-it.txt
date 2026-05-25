@@ -235,6 +235,7 @@
 
   .gmA01-root .gmA01-cta-wrap {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
     margin: 18px 0 24px;
@@ -256,70 +257,11 @@
     background: var(--accent-orange);
     color: #111111;
   }
-  .gmA01-root .gmA01-popurii-toggle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .gmA01-root .gmA01-popurii-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 22px;
-  }
-
-  .gmA01-root .gmA01-popurii-toggle:checked ~ .gmA01-popurii-modal {
-    display: flex;
-  }
-
-  .gmA01-root .gmA01-popurii-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(2px);
-    cursor: pointer;
-  }
-
-  .gmA01-root .gmA01-popurii-card {
-    position: relative;
-    z-index: 2;
-    width: min(780px, 100%);
-    background: linear-gradient(160deg, #191919 0%, #121212 100%);
-    border: 1px solid rgba(255, 96, 0, 0.45);
-    border-radius: 12px;
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
-    padding: 14px;
-  }
-
-  .gmA01-root .gmA01-popurii-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(255, 96, 0, 0.5);
-    border-radius: 8px;
-    background: #1e1e1e;
-    color: #ff6000;
-    cursor: pointer;
-  }
-
-  .gmA01-root .gmA01-popurii-gif {
-    width: 100%;
+  .gmA01-root .gmA01-cta-gif {
+    width: 100px;
     height: auto;
-    border-radius: 8px;
     display: block;
+    margin: 0 14px;
   }
 
   .gmA01-root .gmA01-accent-orange { color: var(--accent-orange); }
@@ -396,20 +338,12 @@
         <li>Demo project included.</li>
       </ul>
       <div class="gmA01-cta-wrap">
-        <a class="gmA01-cta" href="#">Watch the video</a>
         <a class="gmA01-cta" href="#">Grab it for free</a>
-        <label class="gmA01-cta" for="gmA01PopuriiToggle">I'm too old for this shit</label>
+        <img class="gmA01-cta-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Emu cannot decide button" />
+        <a class="gmA01-cta" href="#">I'm too old for this shit</a>
       </div>
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
     </div>
   </section>
-  <input class="gmA01-popurii-toggle" type="checkbox" id="gmA01PopuriiToggle" />
-  <div class="gmA01-popurii-modal">
-    <label class="gmA01-popurii-backdrop" for="gmA01PopuriiToggle" aria-label="Close popup"></label>
-    <div class="gmA01-popurii-card">
-      <label class="gmA01-popurii-close" for="gmA01PopuriiToggle" aria-label="Close popup">X</label>
-      <img class="gmA01-popurii-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="I'm too old for this gift" />
-    </div>
-  </div>
 </div>
 

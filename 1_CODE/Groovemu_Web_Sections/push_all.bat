@@ -1,7 +1,7 @@
 @echo off
 cd /d "W:\1 SLAPASSOUND\001_JUCE_plugins\GROOVEMU website"
 
-git add -A
+git add "1_CODE/Groovemu_Web_Sections"
 git commit -m "auto quick push"
 if errorlevel 1 (
   echo.

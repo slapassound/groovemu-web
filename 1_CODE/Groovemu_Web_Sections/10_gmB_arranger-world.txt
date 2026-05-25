@@ -322,9 +322,8 @@
         <li>Control arrangements like a musical instrument</li>
       </ul>
 
-      <p class="gmB10-body">The music keeps moving while creativity keeps flowing. That is exactly the world GROOVEMU brings into REAPER.</p>
       <p class="gmB10-body">Just start with a simple arrangement. Then play chord progressions live and GROOVEMU turns it into a full musical performance while you guide the harmony and flow in real time. Like conducting your own band.</p>
-      <p class="gmB10-body">Never used an arranger before? My favourite Woody introduces Yamaha &amp; Korg arranger workflow and song styles.</p>
+      <p class="gmB10-body">Never used an arranger before? My favourite <a href="https://www.youtube.com/watch?v=-HDSh2PRh0o" target="_blank" rel="noopener noreferrer">Woody introduces</a> Yamaha &amp; Korg arranger workflow and song styles.</p>
     </div>
 
     <div class="gmB10-media" aria-label="Groovemu arranger world section"></div>

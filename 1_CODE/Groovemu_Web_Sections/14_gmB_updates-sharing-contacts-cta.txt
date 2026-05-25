@@ -248,6 +248,29 @@
 
   .gmB14-root .gmB14-accent-orange { color: var(--accent-orange); }
   .gmB14-root .gmB14-accent-white { color: var(--accent-white); }
+  .gmB14-root .gmB14-cta-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 24px;
+  }
+
+  .gmB14-root .gmB14-cta {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-white);
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .gmB14-root .gmB14-cta:hover {
+    background: var(--accent-orange);
+    color: #111111;
+  }
 
   .gmB14-root .gmB14-grain {
     position: absolute;
@@ -324,7 +347,10 @@
 
       <p class="gmB14-body">Every share, demo and recommendation helps this weird arranger experiment grow even further.</p>
       <p class="gmB14-body">Marko Karja | SlapAsSound | ESTONIA | +372 5119771</p>
-      <p class="gmB14-body">[BUTTON A]: "Nothing to lose. Let’s grab it!" | [BUTTON B]: "I’m too old for this shit."</p>
+      <div class="gmB14-cta-wrap">
+        <a class="gmB14-cta" href="#">Nothing to lose. Let’s grab it!</a>
+        <a class="gmB14-cta" href="#">I’m too old for this shit.</a>
+      </div>
     </div>
 
     <div class="gmB14-media" aria-label="Groovemu updates sharing contacts cta section"></div>

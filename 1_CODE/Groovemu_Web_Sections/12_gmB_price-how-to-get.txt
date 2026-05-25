@@ -331,7 +331,8 @@
       </ul>
 
       <p class="gmB12-body">New content, assets and updates over time.</p>
-      <p class="gmB12-body">In the future, I may also release additional premium songstyle projects and extra content for those who want even more arranger-ready material. And of course, if you enjoy GROOVEMU and want to support the project, you are always welcome to support me through my other plugins and tools...or just make a little donation to keep things alive and running.</p>
+      <p class="gmB12-body">In the future, I may also release additional premium songstyle projects and extra content for those who want even more arranger-ready material.</p>
+      <p class="gmB12-body">And of course, if you enjoy GROOVEMU and want to support the project, you are always welcome to support me through my other plugins and tools...or just make a little donation to keep things alive and running.</p>
     </div>
 
     <div class="gmB12-media" aria-label="Groovemu price and how to get section"></div>

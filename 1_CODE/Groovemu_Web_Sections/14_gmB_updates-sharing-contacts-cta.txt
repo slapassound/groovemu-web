@@ -348,12 +348,20 @@
       <p class="gmB14-body">Every share, demo and recommendation helps this weird arranger experiment grow even further.</p>
       <p class="gmB14-body">Marko Karja | SlapAsSound | ESTONIA | +372 5119771</p>
       <div class="gmB14-cta-wrap">
-        <a class="gmB14-cta" href="#">Nothing to lose. Let’s grab it!</a>
-        <a class="gmB14-cta" href="#">I’m too old for this shit.</a>
+        <a class="gmB14-cta" href="#">Nothing to lose. Let's grab it!</a>
+        <label class="gmB14-cta" for="gmB14PopuriiToggle">I'm too old for this shit.</label>
       </div>
     </div>
 
     <div class="gmB14-media" aria-label="Groovemu updates sharing contacts cta section"></div>
   </section>
-</div>
+  <input class="gmB14-popurii-toggle" type="checkbox" id="gmB14PopuriiToggle" />
+  <div class="gmB14-popurii-modal">
+    <label class="gmB14-popurii-backdrop" for="gmB14PopuriiToggle" aria-label="Close popup"></label>
+    <div class="gmB14-popurii-card">
+      <label class="gmB14-popurii-close" for="gmB14PopuriiToggle" aria-label="Close popup">X</label>
+      <img class="gmB14-popurii-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="I'm too old for this gift" />
+    </div>
+  </div></div>
+
 

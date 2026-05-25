@@ -8,7 +8,7 @@
 
   .gmA-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a0f03bfe50db1.66360062_emu_zither_estonian_2.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a10847f6ab833.54349218_systeme_A_PIC_LEFT.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -28,8 +28,11 @@
 
     /* Pealkiri (H1) */
     --h1-size: 50px;
-    --h1-line: 1.08;
+    --h1-line: 1.15;
     --h1-letter: 0.03em;
+    --h1-metal-top: #ebebeb;
+    --h1-metal-mid: #bababa;
+    --h1-metal-low: #e2e2e2;
 
     /* Subheadline (kui kasutad) */
     --sub-size: 26px;
@@ -48,7 +51,7 @@
 
     /* Kogu tekstiploki asend */
     --text-shift-x: 0px;
-    --text-shift-y: 0px;
+    --text-shift-y: 30px;
 
     /* Tekstirea maksimaalne pikkus (wrap kontroll) */
     --text-max-width: 780px;
@@ -135,17 +138,42 @@
     padding: 56px 100px 56px 32px;
     max-width: var(--text-max-width);
     position: relative;
-    z-index: 2;
+    z-index: 4;
     transform: translate(var(--text-shift-x), var(--text-shift-y));
   }
 
   .gmA-root .gmA-h1 {
+    position: relative;
+    z-index: 6;
     margin: 0 0 var(--h1-to-text-gap);
     font-family: var(--font-main);
     font-size: var(--h1-size);
     line-height: var(--h1-line);
     letter-spacing: var(--h1-letter);
-    color: var(--h1-color);
+    color: transparent;
+    font-weight: var(--font-weight-main);
+    background: linear-gradient(
+      180deg,
+      var(--h1-metal-top) 0%,
+      var(--h1-metal-mid) 48%,
+      var(--h1-metal-low) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14),
+      0 2px 0 rgba(0, 0, 0, 0.34),
+      0 5px 9px rgba(0, 0, 0, 0.54);
+  }
+
+  .gmA-root .gmA-sub {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--sub-size);
+    line-height: var(--sub-line);
+    letter-spacing: var(--sub-letter);
+    color: var(--sub-color);
     font-weight: var(--font-weight-main);
   }
 
@@ -191,6 +219,23 @@
   .gmA-root .gmA-accent-orange { color: var(--accent-orange); }
   .gmA-root .gmA-accent-white { color: var(--accent-white); }
   .gmA-root .gmA-tight { margin-bottom: var(--tight-gap); }
+
+  .gmA-root .gmA-h1 .gmA-accent-orange {
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      #ff6b1f 0%,
+      #ff5600 50%,
+      #bf3f00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 126, 78, 0.2),
+      0 2px 0 rgba(0, 0, 0, 0.3),
+      0 5px 9px rgba(0, 0, 0, 0.5);
+  }
 
   .gmA-root .gmA-grain {
     position: absolute;
@@ -238,6 +283,7 @@
 
   @media (max-width: 760px) {
     .gmA-root .gmA-h1 { font-size: 36px; }
+    .gmA-root .gmA-sub { font-size: 22px; }
     .gmA-root .gmA-body,
     .gmA-root .gmA-bullets li { font-size: 18px; }
   }
@@ -250,9 +296,7 @@
     <div class="gmA-text">
       <h1 class="gmA-h1">REAPER WAS <span class="gmA-accent-orange">NEVER</span> SUPPOSED TO DO THIS</h1>
       <p class="gmA-body">For decades, musicians had to choose between:</p>
-      <p class="gmA-body gmA-tight">Powerful DAW editing</p>
-      <p class="gmA-body gmA-tight">vs.</p>
-      <p class="gmA-body gmA-tight">Real arranger workflow</p>
+      <p class="gmA-body">Powerful <span class="gmA-accent-orange">DAW</span> editing <span class="gmA-accent-white">vs.</span> Real <span class="gmA-accent-orange">arranger</span> workflow</p>
       <p class="gmA-body">Two worlds that were never meant to work together!</p>
       <p class="gmA-body"><span class="gmA-accent-white">Until now.</span></p>
       <p class="gmA-body">
@@ -269,6 +313,12 @@
         <li>No closed ecosystem.</li>
       </ul>
       <p class="gmA-body">Unique. Powerful. <span class="gmA-accent-orange">Unlike anything else</span> created before.</p>
+    
+    
+    
+    
     </div>
   </section>
 </div>
+
+

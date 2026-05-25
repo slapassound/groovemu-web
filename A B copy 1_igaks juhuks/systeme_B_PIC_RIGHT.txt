@@ -8,7 +8,7 @@
 
   .gmB-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a0eff5b8d7459.28546009_emu_zither_estonian.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a10847f6adac6.48451131_systeme_B_PIC_RIGHT.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -28,8 +28,11 @@
 
     /* Pealkiri (H1) */
     --h1-size: 50px;
-    --h1-line: 1.08;
+    --h1-line: 1.15;
     --h1-letter: 0.03em;
+    --h1-metal-top: #ebebeb;
+    --h1-metal-mid: #bababa;
+    --h1-metal-low: #e2e2e2;
 
     /* Subheadline (kui kasutad) */
     --sub-size: 26px;
@@ -48,7 +51,7 @@
 
     /* Kogu tekstiploki asend */
     --text-shift-x: 0px;
-    --text-shift-y: 0px;
+    --text-shift-y: 30px;
 
     /* Tekstirea maksimaalne pikkus (wrap kontroll) */
     --text-max-width: 780px;
@@ -98,7 +101,7 @@
     padding: 56px 24px 56px 100px;
     max-width: var(--text-max-width);
     position: relative;
-    z-index: 2;
+    z-index: 4;
     transform: translate(var(--text-shift-x), var(--text-shift-y));
   }
 
@@ -153,12 +156,37 @@
   }
 
   .gmB-root .gmB-h1 {
+    position: relative;
+    z-index: 6;
     margin: 0 0 var(--h1-to-text-gap);
     font-family: var(--font-main);
     font-size: var(--h1-size);
     line-height: var(--h1-line);
     letter-spacing: var(--h1-letter);
-    color: var(--h1-color);
+    color: transparent;
+    font-weight: var(--font-weight-main);
+    background: linear-gradient(
+      180deg,
+      var(--h1-metal-top) 0%,
+      var(--h1-metal-mid) 48%,
+      var(--h1-metal-low) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14),
+      0 2px 0 rgba(0, 0, 0, 0.34),
+      0 5px 9px rgba(0, 0, 0, 0.54);
+  }
+
+  .gmB-root .gmB-sub {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--sub-size);
+    line-height: var(--sub-line);
+    letter-spacing: var(--sub-letter);
+    color: var(--sub-color);
     font-weight: var(--font-weight-main);
   }
 
@@ -204,6 +232,23 @@
   .gmB-root .gmB-accent-orange { color: var(--accent-orange); }
   .gmB-root .gmB-accent-white { color: var(--accent-white); }
   .gmB-root .gmB-tight { margin-bottom: var(--tight-gap); }
+
+  .gmB-root .gmB-h1 .gmB-accent-orange {
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      #ff6b1f 0%,
+      #ff5600 50%,
+      #bf3f00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 126, 78, 0.2),
+      0 2px 0 rgba(0, 0, 0, 0.3),
+      0 5px 9px rgba(0, 0, 0, 0.5);
+  }
 
   .gmB-root .gmB-grain {
     position: absolute;
@@ -254,6 +299,7 @@
 
   @media (max-width: 760px) {
     .gmB-root .gmB-h1 { font-size: 36px; }
+    .gmB-root .gmB-sub { font-size: 22px; }
     .gmB-root .gmB-body,
     .gmB-root .gmB-bullets li { font-size: 18px; }
   }
@@ -266,9 +312,9 @@
     <div class="gmB-text">
       <h1 class="gmB-h1">REAPER WAS <span class="gmB-accent-orange">NEVER</span> SUPPOSED TO DO THIS</h1>
       <p class="gmB-body">For decades, musicians had to choose between:</p>
-      <p class="gmB-body gmB-tight">Powerful DAW editing</p>
-      <p class="gmB-body gmB-tight">vs.</p>
-      <p class="gmB-body gmB-tight">Real arranger workflow</p>
+      
+      <p class="gmB-body">Powerful <span class="gmB-accent-orange">DAW</span> editing <span class="gmB-accent-white">vs.</span> Real <span class="gmB-accent-orange">arranger</span> workflow</p>
+      
       <p class="gmB-body">Two worlds that were never meant to work together!</p>
       <p class="gmB-body"><span class="gmB-accent-white">Until now.</span></p>
       <p class="gmB-body">
@@ -290,3 +336,5 @@
     <div class="gmB-media" aria-label="Groovemu emu zither"></div>
   </section>
 </div>
+
+

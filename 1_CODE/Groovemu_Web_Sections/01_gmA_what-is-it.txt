@@ -323,11 +323,12 @@
       <ul class="gmA01-bullets">
         <li>Edit with full DAW precision.</li>
         <li>Total REAPER freedom &amp; flexibility.</li>
+        <li>Built for MIDI workflow.</li>
         <li>Your instruments. Your effects.</li>
         <li>Instant live performance.</li>
         <li>Hardware arranger feel.</li>
         <li>Zero setup &amp; no learning curve.</li>
-        <li>Demo project included</li>
+        <li>Demo project included.</li>
       </ul>
       <div class="gmA01-cta-wrap">
         <a class="gmA01-cta" href="#">Watch the video</a>

@@ -504,7 +504,7 @@
         <tbody>
           <tr>
             <td>Bass &amp; Arpeggio</td>
-            <td>Chromatic</td>
+            <td>Melodic</td>
             <td>Instant</td>
             <td>Stop</td>
           </tr>
@@ -522,7 +522,7 @@
           </tr>
           <tr>
             <td>Mono Leads</td>
-            <td>Chromatic</td>
+            <td>Melodic</td>
             <td>Instant</td>
             <td>Retrigger</td>
           </tr>
@@ -532,7 +532,7 @@
       <p class="gmB06-modal-note">For pads and leads, use a longer instrument attack so chord transitions feel smoother.</p>
 
       <div class="gmB06-modal-actions">
-        <a class="gmB06-download-btn" href="data:text/csv;charset=utf-8,Instrument%20Type%2CMode%2CTiming%2CChord%20Switch%0ABass%20%26%20Arpeggio%2CChromatic%2CInstant%2CStop%0A%22Chord-like%22%20Pluck%2CChord%2CInstant%2CStop%0APad%2CChord%2CInstant%2CRetrigger%0AMono%20Leads%2CChromatic%2CInstant%2CRetrigger" download="groovemu-transpose-cheat-sheet.csv">Download CSV</a>
+        <a class="gmB06-download-btn" href="data:text/csv;charset=utf-8,Instrument%20Type%2CMode%2CTiming%2CChord%20Switch%0ABass%20%26%20Arpeggio%2CMelodic%2CInstant%2CStop%0A%22Chord-like%22%20Pluck%2CChord%2CInstant%2CStop%0APad%2CChord%2CInstant%2CRetrigger%0AMono%20Leads%2CMelodic%2CInstant%2CRetrigger" download="groovemu-transpose-cheat-sheet.csv">Download CSV</a>
       </div>
     </div>
   </div>

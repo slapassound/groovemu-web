@@ -248,6 +248,18 @@
 
   .gmB10-root .gmB10-accent-orange { color: var(--accent-orange); }
   .gmB10-root .gmB10-accent-white { color: var(--accent-white); }
+  .gmB10-root .gmB10-inline-link {
+    display: inline-block;
+    border-bottom: 1px solid rgba(255, 96, 0, 0.45);
+    color: #d8d8d8;
+    text-decoration: none;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .gmB10-root .gmB10-inline-link:hover {
+    color: #ffffff;
+    border-color: rgba(255, 96, 0, 0.9);
+  }
 
   .gmB10-root .gmB10-grain {
     position: absolute;
@@ -323,7 +335,7 @@
       </ul>
 
       <p class="gmB10-body">Just start with a simple arrangement. Then play chord progressions live and GROOVEMU turns it into a full musical performance while you guide the harmony and flow in real time. Like conducting your own band.</p>
-      <p class="gmB10-body">Never used an arranger before? My favourite <a href="https://www.youtube.com/watch?v=-HDSh2PRh0o" target="_blank" rel="noopener noreferrer">Woody introduces</a> Yamaha &amp; Korg arranger workflow and song styles.</p>
+      <p class="gmB10-body">Never used an arranger before? My favourite <a class="gmB10-inline-link" href="https://www.youtube.com/watch?v=-HDSh2PRh0o" target="_blank" rel="noopener noreferrer">Woody introduces</a> Yamaha &amp; Korg arranger workflow and song styles.</p>
     </div>
 
     <div class="gmB10-media" aria-label="Groovemu arranger world section"></div>

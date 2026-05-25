@@ -350,7 +350,7 @@
 
       <p class="gmB04-body">Your arrangement becomes a real-time musical performance.</p>
 
-      <p class="gmB04-sub">IMPORTANT WORKFLOW NOTES !</p>
+      <p class="gmB04-sub">IMPORTANT WORKFLOW NOTES!</p>
       <ul class="gmB04-bullets">
         <li>Do not edit MIDI inside the PLAYER region</li>
         <li>Build and edit everything inside VAR &amp; FILL regions</li>

@@ -8,7 +8,7 @@
 
   .gmB06-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a1428b8964037.12358305_2_emu_6_SMARTTRACKS.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a142b7637c889.69712977_2_emu_6_SMARTTRACKS.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -338,5 +338,6 @@
     <div class="gmB06-media" aria-label="Groovemu smart tracks section"></div>
   </section>
 </div>
+
 
 

@@ -164,7 +164,7 @@ The demo projects are also very handy as a starting point for creating your own 
 
 6. SMART TRACKS - AUTO FX & TRANSPOSE MODE & HEALTH
 ASSET_1 BGR Picture [systeme_B_PIC_RIGHT]
-https://d1yei2z3i6k35z.cloudfront.net/3774098/6a1428b8964037.12358305_2_emu_6_SMARTTRACKS.png
+https://d1yei2z3i6k35z.cloudfront.net/3774098/6a142b7637c889.69712977_2_emu_6_SMARTTRACKS.png
 --------------------------------------------------------------------------------- 
 SMART TRACKS & HEALTH SYSTEM
 
@@ -439,4 +439,5 @@ Marko Karja  |  SlapAsSound  |  ESTONIA  |  +372 5119771
 
 
 [add BUTTON A]:  "Nothing to lose. Let’s grab it!"  |  [add BUTTON B]:  "I’m too old for this shit."
+
 

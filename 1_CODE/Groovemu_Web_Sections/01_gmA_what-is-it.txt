@@ -381,7 +381,7 @@
       radial-gradient(circle at 4px 4px, rgba(17, 17, 17, 0.3) 1.1px, transparent 1.7px) 0 0 / 9px 9px,
       radial-gradient(circle at 2px 6px, rgba(165, 165, 165, 0.1) 0.8px, transparent 1.4px) 0 0 / 7px 7px,
       radial-gradient(120% 46% at 30% 12%, rgba(220, 220, 220, 0.14), transparent 56%);
-    opacity: 0.62;
+    opacity: 0.22;
   }
 
   @media (max-width: 960px) {

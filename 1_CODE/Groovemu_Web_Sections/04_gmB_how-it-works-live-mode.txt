@@ -8,7 +8,7 @@
 
   .gmB04-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecaff3cbe5.74975222_2_emu_4_HOWITWORKS_LIVEMODE.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecaff3cbe5.74975222_2_emu_4_HOWITWORKS_LIVEMODE.png?v=20260526_133534");
 
     /* ===== Siin saad tekste sättida ===== */
 

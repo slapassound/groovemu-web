@@ -8,7 +8,7 @@
 
   .gmB14-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb3060333.87852720_2_emu_14_UPDATESSHARINGCONTACTSCTA.png");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb3060333.87852720_2_emu_14_UPDATESSHARINGCONTACTSCTA.png?v=20260526_133534");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -425,7 +425,7 @@
     <label class="gmB14-popurii-backdrop" for="gmB14PopuriiToggle" aria-label="Close popup"></label>
     <div class="gmB14-popurii-card">
       <label class="gmB14-popurii-close" for="gmB14PopuriiToggle" aria-label="Close popup">X</label>
-      <img class="gmB14-popurii-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="I'm too old for this gift" />
+      <img class="gmB14-popurii-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_133534" alt="I'm too old for this gift" />
     </div>
   </div></div>
 

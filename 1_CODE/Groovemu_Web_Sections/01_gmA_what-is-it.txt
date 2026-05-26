@@ -83,7 +83,7 @@
     /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
     --gmA01-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
-    --gmA01-peek-ring-overlay-opacity-percent: 70;
+    --gmA01-peek-ring-overlay-opacity-percent: 30;
 
     width: 100%;
     max-width: 100%;

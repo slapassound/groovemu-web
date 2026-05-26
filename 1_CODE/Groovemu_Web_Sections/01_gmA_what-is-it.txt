@@ -9,7 +9,7 @@
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6949bf8db3bd7_PortKunda2014.mp4");
 
     /* ===== Siin saad tekste sättida ===== */
 

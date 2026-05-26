@@ -251,14 +251,6 @@
 
   .gmB02-root .gmB02-accent-orange { color: var(--accent-orange); }
   .gmB02-root .gmB02-accent-white { color: var(--accent-white); }
-  .gmB02-root .gmB02-peek-toggle {
-    position: fixed;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-  }
-
   .gmB02-root .gmB02-peek {
     position: absolute;
     left: var(--gmB02-peek-x);
@@ -314,7 +306,7 @@
     padding: 22px;
   }
 
-  .gmB02-root .gmB02-peek-toggle:checked ~ .gmB02-peek-modal {
+  .gmB02-root .gmB02-peek-modal:target {
     display: flex;
   }
 
@@ -450,16 +442,15 @@
     </div>
 
     <div class="gmB02-media" aria-label="Groovemu problem and solution section"></div>
-    <input class="gmB02-peek-toggle" type="checkbox" id="gmB02PeekToggle" />
-    <label class="gmB02-peek" for="gmB02PeekToggle" aria-label="Peek inside">
+    <a class="gmB02-peek" href="#gmB02PeekModal" aria-label="Peek inside">
       <span class="gmB02-peek-media"></span>
       <span class="gmB02-peek-ring"></span>
       <span class="gmB02-peek-text">PEEK INSIDE</span>
-    </label>
-    <div class="gmB02-peek-modal">
-      <label class="gmB02-peek-backdrop" for="gmB02PeekToggle" aria-label="Close popup"></label>
+    </a>
+    <div class="gmB02-peek-modal" id="gmB02PeekModal">
+      <a class="gmB02-peek-backdrop" href="#" aria-label="Close popup"></a>
       <div class="gmB02-peek-card">
-        <label class="gmB02-peek-close" for="gmB02PeekToggle" aria-label="Close popup">X</label>
+        <a class="gmB02-peek-close" href="#" aria-label="Close popup">X</a>
         <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
       </div>
     </div>

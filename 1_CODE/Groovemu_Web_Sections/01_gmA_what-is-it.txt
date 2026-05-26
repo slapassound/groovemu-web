@@ -269,14 +269,6 @@
 
   .gmA01-root .gmA01-accent-orange { color: var(--accent-orange); }
   .gmA01-root .gmA01-accent-white { color: var(--accent-white); }
-  .gmA01-root .gmA01-peek-toggle {
-    position: fixed;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-  }
-
   .gmA01-root .gmA01-peek {
     position: absolute;
     left: var(--gmA01-peek-x);
@@ -332,7 +324,7 @@
     padding: 22px;
   }
 
-  .gmA01-root .gmA01-peek-toggle:checked ~ .gmA01-peek-modal {
+  .gmA01-root .gmA01-peek-modal:target {
     display: flex;
   }
 
@@ -443,12 +435,11 @@
   <section class="gmA01-block">
     <div class="gmA01-grain" aria-hidden="true"></div>
     <div class="gmA01-media" aria-label="Groovemu what is it section"></div>
-    <input class="gmA01-peek-toggle" type="checkbox" id="gmA01PeekToggle" />
-    <label class="gmA01-peek" for="gmA01PeekToggle" aria-label="Peek inside">
+    <a class="gmA01-peek" href="#gmA01PeekModal" aria-label="Peek inside">
       <span class="gmA01-peek-media"></span>
       <span class="gmA01-peek-ring"></span>
       <span class="gmA01-peek-text">PEEK INSIDE</span>
-    </label>
+    </a>
     <div class="gmA01-text">
       <h1 class="gmA01-h1"><span class="gmA01-accent-orange">GROOVEMU</span> TRANSFORMS REAPER INTO A REAL ARRANGER WORKSTATION</h1>
       <p class="gmA01-body">Edit in REAPER. Perform live instantly.</p>
@@ -470,10 +461,10 @@
       </div>
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
     </div>
-    <div class="gmA01-peek-modal">
-      <label class="gmA01-peek-backdrop" for="gmA01PeekToggle" aria-label="Close popup"></label>
+    <div class="gmA01-peek-modal" id="gmA01PeekModal">
+      <a class="gmA01-peek-backdrop" href="#" aria-label="Close popup"></a>
       <div class="gmA01-peek-card">
-        <label class="gmA01-peek-close" for="gmA01PeekToggle" aria-label="Close popup">X</label>
+        <a class="gmA01-peek-close" href="#" aria-label="Close popup">X</a>
         <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
       </div>
     </div>

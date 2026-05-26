@@ -286,7 +286,7 @@
     inset: 0;
     border-radius: 50%;
     overflow: hidden;
-    opacity: 0.75;
+    opacity: 0.35;
     background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     background-size: cover;
     background-position: center;

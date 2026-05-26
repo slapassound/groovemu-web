@@ -80,3 +80,9 @@
   - oranş alumine joon (#ff6000 toon)
   - hoveris tugevam oranş joon ja heledam tekst
 - Erandit tohib teha ainult siis, kui kasutaja annab otsese teistsuguse juhise.
+
+## No-JS Critical UI Rule (kohustuslik)
+- Kriitiline veebiploki UI peab olema JS-vaba.
+- Positsioneerimine, popupi avamine/sulgemine, triggerid ja layouti käitumine tuleb teha ainult HTML/CSS lahendustega.
+- JS-i ei tohi kasutada kriitilise UI jaoks (nt ringi X/Y paigutus, popup trigger), kui kasutaja pole seda otseselt lubanud.
+- Eelistada ankur + :target või muud puhast CSS/HTML mustrit, mis töötab ka siis, kui script ei käivitu.

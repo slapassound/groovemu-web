@@ -76,8 +76,8 @@
 
     /* Taust */
     --bg-main: #111111;
-    --gmB02-peek-x: 76%;
-    --gmB02-peek-y: 68%;
+    --gmB02-peek-x: 72%;
+    --gmB02-peek-y: 74%;
     --gmB02-peek-size: 215px;
 
     width: 100%;
@@ -456,13 +456,13 @@
       <span class="gmB02-peek-ring"></span>
       <span class="gmB02-peek-text">PEEK INSIDE</span>
     </label>
-  </section>
-  <div class="gmB02-peek-modal">
-    <label class="gmB02-peek-backdrop" for="gmB02PeekToggle" aria-label="Close popup"></label>
-    <div class="gmB02-peek-card">
-      <label class="gmB02-peek-close" for="gmB02PeekToggle" aria-label="Close popup">X</label>
-      <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+    <div class="gmB02-peek-modal">
+      <label class="gmB02-peek-backdrop" for="gmB02PeekToggle" aria-label="Close popup"></label>
+      <div class="gmB02-peek-card">
+        <label class="gmB02-peek-close" for="gmB02PeekToggle" aria-label="Close popup">X</label>
+        <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+      </div>
     </div>
-  </div>
+  </section>
 </div>
 

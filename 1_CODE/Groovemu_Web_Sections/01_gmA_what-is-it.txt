@@ -76,8 +76,8 @@
 
     /* Taust */
     --bg-main: #111111;
-    --gmA01-peek-x: 66%;
-    --gmA01-peek-y: 80%;
+    --gmA01-peek-x: 58%;
+    --gmA01-peek-y: 68%;
     --gmA01-peek-size: 215px;
 
     width: 100%;
@@ -470,13 +470,13 @@
       </div>
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
     </div>
-  </section>
-  <div class="gmA01-peek-modal">
-    <label class="gmA01-peek-backdrop" for="gmA01PeekToggle" aria-label="Close popup"></label>
-    <div class="gmA01-peek-card">
-      <label class="gmA01-peek-close" for="gmA01PeekToggle" aria-label="Close popup">X</label>
-      <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+    <div class="gmA01-peek-modal">
+      <label class="gmA01-peek-backdrop" for="gmA01PeekToggle" aria-label="Close popup"></label>
+      <div class="gmA01-peek-card">
+        <label class="gmA01-peek-close" for="gmA01PeekToggle" aria-label="Close popup">X</label>
+        <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+      </div>
     </div>
-  </div>
+  </section>
 </div>
 

@@ -275,7 +275,7 @@
     border-radius: 50%;
     overflow: hidden;
     opacity: calc(var(--gmB02-peek-media-opacity-percent, var(--gmA01-peek-media-opacity-percent, 35)) / 100);
-    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/691b751064615_EKUK2_est_01_00_47_21.jpg");
     background-size: cover;
     background-position: center;
   }

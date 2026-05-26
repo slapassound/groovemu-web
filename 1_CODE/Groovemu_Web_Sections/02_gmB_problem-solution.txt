@@ -81,8 +81,10 @@
     --gmB02-peek-y: 330px;
     --gmB02-peek-size: 215px;
     /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
+    /* NB! Loeb ka varuvariandina `--gmA01-peek-media-opacity-percent`, kui see on kogemata kasutusel. */
     --gmB02-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
+    /* NB! Loeb ka varuvariandina `--gmA01-peek-ring-overlay-opacity-percent`, kui see on kogemata kasutusel. */
     --gmB02-peek-ring-overlay-opacity-percent: 70;
 
     width: 100%;
@@ -272,7 +274,7 @@
     inset: 0;
     border-radius: 50%;
     overflow: hidden;
-    opacity: calc(var(--gmB02-peek-media-opacity-percent) / 100);
+    opacity: calc(var(--gmB02-peek-media-opacity-percent, var(--gmA01-peek-media-opacity-percent, 35)) / 100);
     background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     background-size: cover;
     background-position: center;
@@ -283,7 +285,7 @@
     inset: 0;
     border-radius: 50%;
     border: 1px solid #ff6000;
-    background: rgba(26, 26, 26, calc(var(--gmB02-peek-ring-overlay-opacity-percent) / 100));
+    background: rgba(26, 26, 26, calc(var(--gmB02-peek-ring-overlay-opacity-percent, var(--gmA01-peek-ring-overlay-opacity-percent, 25)) / 100));
   }
 
   .gmB02-root .gmB02-peek-text {

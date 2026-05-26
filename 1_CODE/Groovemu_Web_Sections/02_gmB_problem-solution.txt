@@ -76,8 +76,9 @@
 
     /* Taust */
     --bg-main: #111111;
-    --gmB02-peek-x: 72%;
-    --gmB02-peek-y: 74%;
+    --gmB02-peek-x: 50%;
+    /* H1 ja esimese body rea vahelise vahe keskpunkt (JS-vaba paigutus) */
+    --gmB02-peek-y: 330px;
     --gmB02-peek-size: 215px;
 
     width: 100%;
@@ -399,7 +400,7 @@
     }
     .gmB02-root .gmB02-peek {
       left: 50%;
-      top: 82%;
+      top: 76%;
       width: 170px;
       height: 170px;
     }

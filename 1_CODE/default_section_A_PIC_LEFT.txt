@@ -9,8 +9,8 @@
   .gmA-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a10847f6ab833.54349218_systeme_A_PIC_LEFT.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
-    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    --peek-image: url("");
+    --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -81,6 +81,7 @@
     --gmA-peek-x: 46.3%;
     --gmA-peek-y: 330px;
     --gmA-peek-size: 215px;
+    --gmA-peek-mobile-size-factor: 0.5;
     --gmA-peek-media-opacity-percent: 50;
     --gmA-peek-ring-overlay-opacity-percent: 50;
 
@@ -409,9 +410,9 @@
     }
     .gmA-root .gmA-peek {
       left: 50%;
-      top: 76%;
-      width: 170px;
-      height: 170px;
+      top: var(--gmA-peek-y);
+      width: calc(var(--gmA-peek-size) * var(--gmA-peek-mobile-size-factor));
+      height: calc(var(--gmA-peek-size) * var(--gmA-peek-mobile-size-factor));
     }
     .gmA-root .gmA-peek-text {
       font-size: 16px;
@@ -478,6 +479,7 @@
     var popupHost = root.querySelector(".gmA-peek-popup-media");
     var modal = root.querySelector("#gmAPeekModal");
     if (!ringHost || !popupHost || !modal) return;
+    var desktopPeekY = getComputedStyle(root).getPropertyValue("--gmA-peek-y").trim() || "330px";
 
     function getVideoUrl() {
       return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^["']|["']$/g, "");
@@ -538,9 +540,35 @@
       else popupHost.innerHTML = "";
     }
 
+    function lockHashScrollOnMobile() {
+      if (window.innerWidth > 960) return;
+      var savedX = window.scrollX;
+      var savedY = window.scrollY;
+      requestAnimationFrame(function () {
+        window.scrollTo(savedX, savedY);
+      });
+    }
+
+    function placePeekOnMobile() {
+      if (window.innerWidth > 960) {
+        root.style.setProperty("--gmA-peek-y", desktopPeekY);
+        return;
+      }
+      var media = root.querySelector(".gmA-media");
+      var peek = root.querySelector(".gmA-peek");
+      if (!media || !peek) return;
+      var blockRect = root.querySelector(".gmA-block").getBoundingClientRect();
+      var mediaRect = media.getBoundingClientRect();
+      var centerY = (mediaRect.top + mediaRect.height / 2) - blockRect.top;
+      root.style.setProperty("--gmA-peek-y", centerY + "px");
+    }
+
     mountRing();
     syncPopupToHash();
+    placePeekOnMobile();
     window.addEventListener("hashchange", syncPopupToHash);
+    window.addEventListener("hashchange", lockHashScrollOnMobile);
+    window.addEventListener("resize", placePeekOnMobile);
   })();
 </script>
 

@@ -9,8 +9,8 @@
   .gmA03-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0014582.27104758_2_emu_3_HOWITWORKSEDITMODE.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
-    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    --peek-image: url("");
+    --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
 

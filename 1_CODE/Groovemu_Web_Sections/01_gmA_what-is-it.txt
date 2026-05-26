@@ -9,6 +9,7 @@
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb3060333.87852720_2_emu_14_UPDATESSHARINGCONTACTSCTA.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -291,7 +292,7 @@
     border-radius: 50%;
     overflow: hidden;
     opacity: calc(var(--gmA01-peek-media-opacity-percent) / 100);
-    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    background-image: var(--peek-image);
     background-size: cover;
     background-position: center;
   }
@@ -370,9 +371,14 @@
 
   .gmA01-root .gmA01-peek-popup-media {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
     display: block;
+    background-image: var(--peek-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #111111;
   }
 
   .gmA01-root .gmA01-grain {
@@ -470,7 +476,7 @@
       <a class="gmA01-peek-backdrop" href="#" aria-label="Close popup"></a>
       <div class="gmA01-peek-card">
         <a class="gmA01-peek-close" href="#" aria-label="Close popup">X</a>
-        <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+        <div class="gmA01-peek-popup-media" aria-label="Peek media preview"></div>
       </div>
     </div>
   </section>

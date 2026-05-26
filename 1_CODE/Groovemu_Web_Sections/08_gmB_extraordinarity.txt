@@ -415,7 +415,8 @@
     }
     .gmB08-root .gmB08-peek {
       left: 50%;
-      top: var(--gmB08-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmB08-peek-size) * var(--gmB08-peek-mobile-size-factor));
       height: calc(var(--gmB08-peek-size) * var(--gmB08-peek-mobile-size-factor));
     }

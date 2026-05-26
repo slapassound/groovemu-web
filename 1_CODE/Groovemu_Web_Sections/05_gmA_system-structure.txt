@@ -399,7 +399,8 @@
     }
     .gmA05-root .gmA05-peek {
       left: 50%;
-      top: var(--gmA05-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmA05-peek-size) * var(--gmA05-peek-mobile-size-factor));
       height: calc(var(--gmA05-peek-size) * var(--gmA05-peek-mobile-size-factor));
     }

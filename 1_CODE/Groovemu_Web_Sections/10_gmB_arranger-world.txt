@@ -427,7 +427,8 @@
     }
     .gmB10-root .gmB10-peek {
       left: 50%;
-      top: var(--gmB10-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmB10-peek-size) * var(--gmB10-peek-mobile-size-factor));
       height: calc(var(--gmB10-peek-size) * var(--gmB10-peek-mobile-size-factor));
     }

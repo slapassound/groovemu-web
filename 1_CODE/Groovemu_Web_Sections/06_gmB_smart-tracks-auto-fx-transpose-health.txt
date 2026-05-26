@@ -560,7 +560,8 @@
     }
     .gmB06-root .gmB06-peek {
       left: 50%;
-      top: var(--gmB06-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmB06-peek-size) * var(--gmB06-peek-mobile-size-factor));
       height: calc(var(--gmB06-peek-size) * var(--gmB06-peek-mobile-size-factor));
     }

@@ -503,7 +503,8 @@
     }
     .gmB14-root .gmB14-peek {
       left: 50%;
-      top: var(--gmB14-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmB14-peek-size) * var(--gmB14-peek-mobile-size-factor));
       height: calc(var(--gmB14-peek-size) * var(--gmB14-peek-mobile-size-factor));
     }

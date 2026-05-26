@@ -399,7 +399,8 @@
     }
     .gmA13-root .gmA13-peek {
       left: 50%;
-      top: var(--gmA13-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmA13-peek-size) * var(--gmA13-peek-mobile-size-factor));
       height: calc(var(--gmA13-peek-size) * var(--gmA13-peek-mobile-size-factor));
     }

@@ -437,7 +437,8 @@
     }
     .gmB04-root .gmB04-peek {
       left: 50%;
-      top: var(--gmB04-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmB04-peek-size) * var(--gmB04-peek-mobile-size-factor));
       height: calc(var(--gmB04-peek-size) * var(--gmB04-peek-mobile-size-factor));
     }

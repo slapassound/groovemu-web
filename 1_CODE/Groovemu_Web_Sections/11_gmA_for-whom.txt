@@ -399,7 +399,8 @@
     }
     .gmA11-root .gmA11-peek {
       left: 50%;
-      top: var(--gmA11-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmA11-peek-size) * var(--gmA11-peek-mobile-size-factor));
       height: calc(var(--gmA11-peek-size) * var(--gmA11-peek-mobile-size-factor));
     }

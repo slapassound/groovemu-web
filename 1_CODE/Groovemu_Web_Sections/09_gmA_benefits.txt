@@ -399,7 +399,8 @@
     }
     .gmA09-root .gmA09-peek {
       left: 50%;
-      top: var(--gmA09-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmA09-peek-size) * var(--gmA09-peek-mobile-size-factor));
       height: calc(var(--gmA09-peek-size) * var(--gmA09-peek-mobile-size-factor));
     }

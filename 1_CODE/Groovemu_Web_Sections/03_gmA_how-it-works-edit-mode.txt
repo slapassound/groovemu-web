@@ -399,7 +399,8 @@
     }
     .gmA03-root .gmA03-peek {
       left: 50%;
-      top: var(--gmA03-peek-y);
+      top: auto;
+      bottom: 28.125vw;
       width: calc(var(--gmA03-peek-size) * var(--gmA03-peek-mobile-size-factor));
       height: calc(var(--gmA03-peek-size) * var(--gmA03-peek-mobile-size-factor));
     }

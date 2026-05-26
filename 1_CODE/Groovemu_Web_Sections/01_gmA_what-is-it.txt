@@ -80,6 +80,10 @@
     /* H1 ja esimese body rea vahelise vahe keskpunkt (JS-vaba paigutus) */
     --gmA01-peek-y: 330px;
     --gmA01-peek-size: 215px;
+    /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
+    --gmA01-peek-media-opacity-percent: 35;
+    /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
+    --gmA01-peek-ring-overlay-opacity-percent: 25;
 
     width: 100%;
     max-width: 100%;
@@ -286,7 +290,7 @@
     inset: 0;
     border-radius: 50%;
     overflow: hidden;
-    opacity: 0.35;
+    opacity: calc(var(--gmA01-peek-media-opacity-percent) / 100);
     background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     background-size: cover;
     background-position: center;
@@ -297,7 +301,7 @@
     inset: 0;
     border-radius: 50%;
     border: 1px solid #ff6000;
-    background: rgba(26, 26, 26, 0.25);
+    background: rgba(26, 26, 26, calc(var(--gmA01-peek-ring-overlay-opacity-percent) / 100));
   }
 
   .gmA01-root .gmA01-peek-text {
@@ -381,7 +385,7 @@
       radial-gradient(circle at 4px 4px, rgba(17, 17, 17, 0.3) 1.1px, transparent 1.7px) 0 0 / 9px 9px,
       radial-gradient(circle at 2px 6px, rgba(165, 165, 165, 0.1) 0.8px, transparent 1.4px) 0 0 / 7px 7px,
       radial-gradient(120% 46% at 30% 12%, rgba(220, 220, 220, 0.14), transparent 56%);
-    opacity: 0.22;
+    opacity: 0.62;
   }
 
   @media (max-width: 960px) {

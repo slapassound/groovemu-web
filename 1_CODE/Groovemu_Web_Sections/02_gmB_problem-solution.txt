@@ -85,7 +85,7 @@
     --gmB02-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
     /* NB! Loeb ka varuvariandina `--gmA01-peek-ring-overlay-opacity-percent`, kui see on kogemata kasutusel. */
-    --gmB02-peek-ring-overlay-opacity-percent: 80;
+    --gmB02-peek-ring-overlay-opacity-percent: 50;
 
     width: 100%;
     max-width: 100%;

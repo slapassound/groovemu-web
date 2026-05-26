@@ -76,6 +76,9 @@
 
     /* Taust */
     --bg-main: #111111;
+    --gmA01-peek-x: 66%;
+    --gmA01-peek-y: 80%;
+    --gmA01-peek-size: 215px;
 
     width: 100%;
     max-width: 100%;
@@ -266,6 +269,114 @@
 
   .gmA01-root .gmA01-accent-orange { color: var(--accent-orange); }
   .gmA01-root .gmA01-accent-white { color: var(--accent-white); }
+  .gmA01-root .gmA01-peek-toggle {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gmA01-root .gmA01-peek {
+    position: absolute;
+    left: var(--gmA01-peek-x);
+    top: var(--gmA01-peek-y);
+    width: var(--gmA01-peek-size);
+    height: var(--gmA01-peek-size);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    cursor: pointer;
+  }
+
+  .gmA01-root .gmA01-peek-media {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0.35;
+    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gmA01-root .gmA01-peek-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid #ff6000;
+    background: rgba(26, 26, 26, 0.25);
+  }
+
+  .gmA01-root .gmA01-peek-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+  }
+
+  .gmA01-root .gmA01-peek-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+
+  .gmA01-root .gmA01-peek-toggle:checked ~ .gmA01-peek-modal {
+    display: flex;
+  }
+
+  .gmA01-root .gmA01-peek-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .gmA01-root .gmA01-peek-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+
+  .gmA01-root .gmA01-peek-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+
+  .gmA01-root .gmA01-peek-popup-media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
 
   .gmA01-root .gmA01-grain {
     position: absolute;
@@ -309,6 +420,15 @@
     .gmA01-root .gmA01-media::after {
       display: none;
     }
+    .gmA01-root .gmA01-peek {
+      left: 50%;
+      top: 82%;
+      width: 170px;
+      height: 170px;
+    }
+    .gmA01-root .gmA01-peek-text {
+      font-size: 16px;
+    }
   }
 
   @media (max-width: 760px) {
@@ -323,6 +443,12 @@
   <section class="gmA01-block">
     <div class="gmA01-grain" aria-hidden="true"></div>
     <div class="gmA01-media" aria-label="Groovemu what is it section"></div>
+    <input class="gmA01-peek-toggle" type="checkbox" id="gmA01PeekToggle" />
+    <label class="gmA01-peek" for="gmA01PeekToggle" aria-label="Peek inside">
+      <span class="gmA01-peek-media"></span>
+      <span class="gmA01-peek-ring"></span>
+      <span class="gmA01-peek-text">PEEK INSIDE</span>
+    </label>
     <div class="gmA01-text">
       <h1 class="gmA01-h1"><span class="gmA01-accent-orange">GROOVEMU</span> TRANSFORMS REAPER INTO A REAL ARRANGER WORKSTATION</h1>
       <p class="gmA01-body">Edit in REAPER. Perform live instantly.</p>
@@ -345,5 +471,12 @@
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
     </div>
   </section>
+  <div class="gmA01-peek-modal">
+    <label class="gmA01-peek-backdrop" for="gmA01PeekToggle" aria-label="Close popup"></label>
+    <div class="gmA01-peek-card">
+      <label class="gmA01-peek-close" for="gmA01PeekToggle" aria-label="Close popup">X</label>
+      <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+    </div>
+  </div>
 </div>
 

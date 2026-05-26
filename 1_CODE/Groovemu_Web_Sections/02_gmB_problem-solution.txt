@@ -76,6 +76,9 @@
 
     /* Taust */
     --bg-main: #111111;
+    --gmB02-peek-x: 76%;
+    --gmB02-peek-y: 68%;
+    --gmB02-peek-size: 215px;
 
     width: 100%;
     max-width: 100%;
@@ -248,6 +251,114 @@
 
   .gmB02-root .gmB02-accent-orange { color: var(--accent-orange); }
   .gmB02-root .gmB02-accent-white { color: var(--accent-white); }
+  .gmB02-root .gmB02-peek-toggle {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gmB02-root .gmB02-peek {
+    position: absolute;
+    left: var(--gmB02-peek-x);
+    top: var(--gmB02-peek-y);
+    width: var(--gmB02-peek-size);
+    height: var(--gmB02-peek-size);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    cursor: pointer;
+  }
+
+  .gmB02-root .gmB02-peek-media {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0.35;
+    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gmB02-root .gmB02-peek-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid #ff6000;
+    background: rgba(26, 26, 26, 0.25);
+  }
+
+  .gmB02-root .gmB02-peek-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+  }
+
+  .gmB02-root .gmB02-peek-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+
+  .gmB02-root .gmB02-peek-toggle:checked ~ .gmB02-peek-modal {
+    display: flex;
+  }
+
+  .gmB02-root .gmB02-peek-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .gmB02-root .gmB02-peek-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+
+  .gmB02-root .gmB02-peek-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+
+  .gmB02-root .gmB02-peek-popup-media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
 
   .gmB02-root .gmB02-grain {
     position: absolute;
@@ -294,6 +405,15 @@
     .gmB02-root .gmB02-media::after {
       display: none;
     }
+    .gmB02-root .gmB02-peek {
+      left: 50%;
+      top: 82%;
+      width: 170px;
+      height: 170px;
+    }
+    .gmB02-root .gmB02-peek-text {
+      font-size: 16px;
+    }
   }
 
   @media (max-width: 760px) {
@@ -330,6 +450,19 @@
     </div>
 
     <div class="gmB02-media" aria-label="Groovemu problem and solution section"></div>
+    <input class="gmB02-peek-toggle" type="checkbox" id="gmB02PeekToggle" />
+    <label class="gmB02-peek" for="gmB02PeekToggle" aria-label="Peek inside">
+      <span class="gmB02-peek-media"></span>
+      <span class="gmB02-peek-ring"></span>
+      <span class="gmB02-peek-text">PEEK INSIDE</span>
+    </label>
   </section>
+  <div class="gmB02-peek-modal">
+    <label class="gmB02-peek-backdrop" for="gmB02PeekToggle" aria-label="Close popup"></label>
+    <div class="gmB02-peek-card">
+      <label class="gmB02-peek-close" for="gmB02PeekToggle" aria-label="Close popup">X</label>
+      <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
+    </div>
+  </div>
 </div>
 

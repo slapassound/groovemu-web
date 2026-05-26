@@ -81,7 +81,7 @@
     --gmB02-peek-y: 330px;
     --gmB02-peek-size: 215px;
     /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
-    --gmB02-peek-media-opacity-percent: 5;
+    --gmB02-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
     --gmB02-peek-ring-overlay-opacity-percent: 70;
 

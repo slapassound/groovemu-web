@@ -76,7 +76,7 @@
 
     /* Taust */
     --bg-main: #111111;
-    --gmA01-peek-x: 58%;
+    --gmA01-peek-x: 46.3%;
     --gmA01-peek-y: 68%;
     --gmA01-peek-size: 215px;
 
@@ -470,4 +470,25 @@
     </div>
   </section>
 </div>
+
+<script>
+  (function () {
+    var root = document.querySelector(".gmA01-root");
+    if (!root) return;
+    var h1 = root.querySelector(".gmA01-h1");
+    var firstBody = root.querySelector(".gmA01-body");
+    if (!h1 || !firstBody) return;
+
+    function setPeekY() {
+      var rootRect = root.getBoundingClientRect();
+      var h1Rect = h1.getBoundingClientRect();
+      var bodyRect = firstBody.getBoundingClientRect();
+      var centerY = ((h1Rect.bottom + bodyRect.top) / 2) - rootRect.top;
+      root.style.setProperty("--gmA01-peek-y", centerY + "px");
+    }
+
+    setPeekY();
+    window.addEventListener("resize", setPeekY);
+  })();
+</script>
 

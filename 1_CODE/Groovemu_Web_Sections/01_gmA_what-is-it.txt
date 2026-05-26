@@ -343,6 +343,9 @@
   .gmA01-root .gmA01-peek-modal:target {
     display: flex;
   }
+  .gmA01-root .gmA01-peek-modal.is-open {
+    display: flex;
+  }
 
   .gmA01-root .gmA01-peek-backdrop {
     position: absolute;
@@ -520,6 +523,9 @@
     function syncPopupToHash(){ if(location.hash==="#gmA01PeekModal") mountPopup(); else popupHost.innerHTML=""; }
     function placePeekOnMobile(){ if(window.innerWidth>960){ root.style.setProperty("--gmA01-peek-y", desktopPeekY); return; } var media=root.querySelector(".gmA01-media"); if(!media) return; var blockRect=root.querySelector(".gmA01-block").getBoundingClientRect(); var mediaRect=media.getBoundingClientRect(); var centerY=(mediaRect.top+mediaRect.height/2)-blockRect.top; root.style.setProperty("--gmA01-peek-y", centerY + "px"); }
     function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
-    mountRing(); syncPopupToHash(); placePeekOnMobile(); window.addEventListener("hashchange", syncPopupToHash); window.addEventListener("hashchange", lockHashScrollOnMobile); window.addEventListener("resize", placePeekOnMobile);
+    function openModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.add("is-open"); mountPopup(); requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function closeModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.remove("is-open"); popupHost.innerHTML=""; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function bindModalHandlers(){ var opener=root.querySelector(".gmA01-peek"); var closeBtn=modal.querySelector(".gmA01-peek-close"); var backdrop=modal.querySelector(".gmA01-peek-backdrop"); if(opener) opener.addEventListener("click", openModalNoScroll); if(closeBtn) closeBtn.addEventListener("click", closeModalNoScroll); if(backdrop) backdrop.addEventListener("click", closeModalNoScroll); window.addEventListener("keydown", function(ev){ if(ev.key==="Escape") closeModalNoScroll(ev); }); }
+    mountRing(); syncPopupToHash(); placePeekOnMobile(); bindModalHandlers(); window.addEventListener("hashchange", syncPopupToHash); window.addEventListener("hashchange", lockHashScrollOnMobile); window.addEventListener("resize", placePeekOnMobile);
   })();
 </script>

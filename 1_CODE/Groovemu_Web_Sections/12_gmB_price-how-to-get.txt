@@ -318,6 +318,7 @@
     padding: 22px;
   }
   .gmB12-root .gmB12-peek-modal:target { display: flex; }
+  .gmB12-root .gmB12-peek-modal.is-open { display: flex; }
   .gmB12-root .gmB12-peek-backdrop {
     position: absolute;
     inset: 0;
@@ -525,8 +526,11 @@
       root.style.setProperty("--gmB12-peek-y", centerY + "px");
     }
     function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function openModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.add("is-open"); mountPopup(); requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function closeModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.remove("is-open"); popupHost.innerHTML=""; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function bindModalHandlers(){ var opener=root.querySelector(".gmB12-peek"); var closeBtn=modal.querySelector(".gmB12-peek-close"); var backdrop=modal.querySelector(".gmB12-peek-backdrop"); if(opener) opener.addEventListener("click", openModalNoScroll); if(closeBtn) closeBtn.addEventListener("click", closeModalNoScroll); if(backdrop) backdrop.addEventListener("click", closeModalNoScroll); window.addEventListener("keydown", function(ev){ if(ev.key==="Escape") closeModalNoScroll(ev); }); }
 
-    mountRing(); syncPopupToHash(); placePeekOnMobile();
+    mountRing(); syncPopupToHash(); placePeekOnMobile(); bindModalHandlers();
     window.addEventListener("hashchange", syncPopupToHash);
     window.addEventListener("hashchange", lockHashScrollOnMobile);
     window.addEventListener("resize", placePeekOnMobile);

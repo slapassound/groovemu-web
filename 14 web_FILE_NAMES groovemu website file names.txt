@@ -1,0 +1,14 @@
+01_gmA_what-is-it
+02_gmB_problem-solution
+03_gmA_how-it-works-edit-mode
+04_gmB_how-it-works-live-mode
+05_gmA_system-structure
+06_gmB_smart-tracks-auto-fx-transpose-health
+07_gmA_setup
+08_gmB_extraordinarity
+09_gmA_benefits
+10_gmB_arranger-world
+11_gmA_for-whom
+12_gmB_price-how-to-get
+13_gmA_story-behind-it
+14_gmB_updates-sharing-contacts-cta

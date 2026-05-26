@@ -1,0 +1,37 @@
+.peek-inside-frame,
+.peek-inside-frame * {
+  box-sizing: border-box;
+}
+.peek-inside-frame {
+  width: 215px;
+  height: 215px;
+  position: relative;
+}
+.background-layer {
+  background: rgba(26, 26, 26, 0.7);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #ff6000;
+  border-width: 1px;
+  width: 215px;
+  height: 215px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.peek-inside {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-Light", sans-serif;
+  font-size: 20px;
+  line-height: 117.28%;
+  font-weight: 300;
+  position: absolute;
+  left: 35px;
+  top: 79px;
+  width: 144px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

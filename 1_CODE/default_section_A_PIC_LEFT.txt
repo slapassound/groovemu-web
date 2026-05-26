@@ -1,0 +1,456 @@
+﻿<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+  .gmA-root,
+  .gmA-root * {
+    box-sizing: border-box;
+  }
+
+  .gmA-root {
+    /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a10847f6ab833.54349218_systeme_A_PIC_LEFT.png");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+
+    /* ===== Siin saad tekste sättida ===== */
+
+    /* Fondi üldseaded (kõik tekstid) */
+    --font-main: "Roboto", sans-serif;
+    --font-weight-main: 300;
+
+    /* Rõhutused (2 eri accent värvi) */
+    --accent-orange: #ff6000;
+    --accent-white: #ffffff;
+
+    /* Tekstivärvid */
+    --h1-color: #ffffff;
+    --sub-color: #bbbbbb;
+    --body-color: #888888;
+    --bullet-color: #888888;
+
+    /* Pealkiri (H1) */
+    --h1-size: 50px;
+    --h1-line: 1.15;
+    --h1-letter: 0.03em;
+    --h1-metal-top: #ebebeb;
+    --h1-metal-mid: #bababa;
+    --h1-metal-low: #e2e2e2;
+
+    /* Subheadline (kui kasutad) */
+    --sub-size: 26px;
+    --sub-line: 1.25;
+    --sub-letter: 0.02em;
+
+    /* Tavaline tekst */
+    --body-size: 20px;
+    --body-line: 1.45;
+    --body-letter: 0.01em;
+
+    /* Bullet tekst */
+    --bullet-size: 20px;
+    --bullet-line: 1.2;
+    --bullet-letter: 0.01em;
+
+    /* Kogu tekstiploki asend */
+    --text-shift-x: 0px;
+    --text-shift-y: 30px;
+
+    /* Tekstirea maksimaalne pikkus (wrap kontroll) */
+    --text-max-width: 780px;
+
+    /* Vahed tekstiploki sees */
+    --h1-to-text-gap: 56px;
+    --p-gap: 18px;
+    --tight-gap: 8px;
+    --bullets-top-gap: 20px;
+    --bullets-bottom-gap: 32px;
+
+    /* Bullet-ploki horisontaalne nihe */
+    --bullets-offset-x: 20px;
+
+    /* Desktop kõrvuti vaade: teksti ja pildi suhe */
+    --block-gap: 34px;
+    --image-width-boost: 115%;
+    --image-overlap: 15%;
+
+    /* Stack-vaade (kui pilt hüppab teksti alla) */
+    --stack-gap: 18px;
+
+    /* Taust */
+    --bg-main: #111111;
+    --gmA-peek-x: 46.3%;
+    --gmA-peek-y: 330px;
+    --gmA-peek-size: 215px;
+    --gmA-peek-media-opacity-percent: 50;
+    --gmA-peek-ring-overlay-opacity-percent: 50;
+
+    width: 100%;
+    max-width: 100%;
+    background: var(--bg-main);
+    color: var(--body-color);
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .gmA-root .gmA-block {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(360px, 46%);
+    gap: var(--block-gap);
+    align-items: stretch;
+    min-height: 100vh;
+  }
+
+  .gmA-root .gmA-media {
+    grid-column: 1;
+    min-height: 100%;
+    position: relative;
+    width: var(--image-width-boost);
+    margin-right: calc(-1 * var(--image-overlap));
+    z-index: 1;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  .gmA-root .gmA-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to right,
+        rgba(17, 17, 17, 0) 7%,
+        rgba(17, 17, 17, 0.46) 62%,
+        rgba(17, 17, 17, 1) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0.9) 0%,
+        rgba(17, 17, 17, 0.42) 11%,
+        rgba(17, 17, 17, 0) 33%
+      ),
+      linear-gradient(
+        to top,
+        rgba(17, 17, 17, 1) 0%,
+        rgba(17, 17, 17, 0.58) 14%,
+        rgba(17, 17, 17, 0) 38%
+      );
+  }
+
+  .gmA-root .gmA-text {
+    grid-column: 2;
+    padding: 56px 100px 56px 32px;
+    max-width: var(--text-max-width);
+    position: relative;
+    z-index: 4;
+    transform: translate(var(--text-shift-x), var(--text-shift-y));
+  }
+
+  .gmA-root .gmA-h1 {
+    position: relative;
+    z-index: 6;
+    margin: 0 0 var(--h1-to-text-gap);
+    font-family: var(--font-main);
+    font-size: var(--h1-size);
+    line-height: var(--h1-line);
+    letter-spacing: var(--h1-letter);
+    color: transparent;
+    font-weight: var(--font-weight-main);
+    background: linear-gradient(
+      180deg,
+      var(--h1-metal-top) 0%,
+      var(--h1-metal-mid) 48%,
+      var(--h1-metal-low) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14),
+      0 2px 0 rgba(0, 0, 0, 0.34),
+      0 5px 9px rgba(0, 0, 0, 0.54);
+  }
+
+  .gmA-root .gmA-sub {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--sub-size);
+    line-height: var(--sub-line);
+    letter-spacing: var(--sub-letter);
+    color: var(--sub-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA-root .gmA-body {
+    margin: 0 0 var(--p-gap);
+    font-family: var(--font-main);
+    font-size: var(--body-size);
+    line-height: var(--body-line);
+    letter-spacing: var(--body-letter);
+    color: var(--body-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA-root .gmA-bullets {
+    margin: var(--bullets-top-gap) 0 var(--bullets-bottom-gap) var(--bullets-offset-x);
+    padding: 0;
+    list-style: none;
+  }
+
+  .gmA-root .gmA-bullets li {
+    position: relative;
+    margin: 0 0 6px;
+    padding-left: 16px;
+    font-family: var(--font-main);
+    font-size: var(--bullet-size);
+    line-height: var(--bullet-line);
+    letter-spacing: var(--bullet-letter);
+    color: var(--bullet-color);
+    font-weight: var(--font-weight-main);
+  }
+
+  .gmA-root .gmA-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+  }
+
+  .gmA-root .gmA-accent-orange { color: var(--accent-orange); }
+  .gmA-root .gmA-accent-white { color: var(--accent-white); }
+  .gmA-root .gmA-tight { margin-bottom: var(--tight-gap); }
+  .gmA-root .gmA-peek {
+    position: absolute;
+    left: var(--gmA-peek-x);
+    top: var(--gmA-peek-y);
+    width: var(--gmA-peek-size);
+    height: var(--gmA-peek-size);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    cursor: pointer;
+  }
+
+  .gmA-root .gmA-peek-media {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: calc(var(--gmA-peek-media-opacity-percent) / 100);
+    background-image: var(--peek-image);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gmA-root .gmA-peek-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid #ff6000;
+    background: rgba(26, 26, 26, calc(var(--gmA-peek-ring-overlay-opacity-percent) / 100));
+  }
+
+  .gmA-root .gmA-peek-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+  }
+
+  .gmA-root .gmA-peek-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+
+  .gmA-root .gmA-peek-modal:target {
+    display: flex;
+  }
+
+  .gmA-root .gmA-peek-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .gmA-root .gmA-peek-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+
+  .gmA-root .gmA-peek-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+
+  .gmA-root .gmA-peek-popup-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    display: block;
+    background-image: var(--peek-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #111111;
+  }
+
+  .gmA-root .gmA-h1 .gmA-accent-orange {
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      #ff6b1f 0%,
+      #ff5600 50%,
+      #bf3f00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255, 126, 78, 0.2),
+      0 2px 0 rgba(0, 0, 0, 0.3),
+      0 5px 9px rgba(0, 0, 0, 0.5);
+  }
+
+  .gmA-root .gmA-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 1px 1px, rgba(205, 205, 205, 0.14) 1px, transparent 1.6px) 0 0 / 8px 8px,
+      radial-gradient(circle at 4px 4px, rgba(17, 17, 17, 0.3) 1.1px, transparent 1.7px) 0 0 / 9px 9px,
+      radial-gradient(circle at 2px 6px, rgba(165, 165, 165, 0.1) 0.8px, transparent 1.4px) 0 0 / 7px 7px,
+      radial-gradient(120% 46% at 30% 12%, rgba(220, 220, 220, 0.14), transparent 56%);
+    opacity: 0.62;
+  }
+
+  @media (max-width: 960px) {
+    .gmA-root .gmA-block {
+      grid-template-columns: 1fr;
+      gap: var(--stack-gap);
+      min-height: auto;
+    }
+
+    .gmA-root .gmA-media {
+      order: 2;
+      width: 100%;
+      margin-right: 0;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+      background-size: contain;
+      background-position: center top;
+      background-color: var(--bg-main);
+    }
+
+    .gmA-root .gmA-text {
+      grid-column: auto;
+      order: 1;
+      padding: 8px 16px 0;
+      max-width: none;
+      transform: translate(0, 0);
+    }
+
+    .gmA-root .gmA-media::after {
+      display: none;
+    }
+    .gmA-root .gmA-peek {
+      left: 50%;
+      top: 76%;
+      width: 170px;
+      height: 170px;
+    }
+    .gmA-root .gmA-peek-text {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .gmA-root .gmA-h1 { font-size: 36px; }
+    .gmA-root .gmA-sub { font-size: 22px; }
+    .gmA-root .gmA-body,
+    .gmA-root .gmA-bullets li { font-size: 18px; }
+  }
+</style>
+
+<div class="gmA-root">
+  <section class="gmA-block">
+    <div class="gmA-grain" aria-hidden="true"></div>
+    <div class="gmA-media" aria-label="Groovemu emu zither"></div>
+    <a class="gmA-peek" href="#gmAPeekModal" aria-label="Peek inside">
+      <span class="gmA-peek-media"></span>
+      <span class="gmA-peek-ring"></span>
+      <span class="gmA-peek-text">PEEK INSIDE</span>
+    </a>
+    <div class="gmA-text">
+      <h1 class="gmA-h1">REAPER WAS <span class="gmA-accent-orange">NEVER</span> SUPPOSED TO DO THIS</h1>
+      <p class="gmA-body">For decades, musicians had to choose between:</p>
+      <p class="gmA-body">Powerful <span class="gmA-accent-orange">DAW</span> editing <span class="gmA-accent-white">vs.</span> Real <span class="gmA-accent-orange">arranger</span> workflow</p>
+      <p class="gmA-body">Two worlds that were never meant to work together!</p>
+      <p class="gmA-body"><span class="gmA-accent-white">Until now.</span></p>
+      <p class="gmA-body">
+        GROOVEMU combines both inside REAPER. A world-first system where modern
+        DAW production meets <span class="gmA-accent-orange">live arranger</span> workflow.
+      </p>
+      <p class="gmA-body">
+        Shape detailed arrangements with full DAW freedom and instantly perform
+        them live with arranger-style <span class="gmA-accent-white">accompaniment</span>.
+      </p>
+      <ul class="gmA-bullets">
+        <li>No expensive hardware.</li>
+        <li>No separate arranger software.</li>
+        <li>No closed ecosystem.</li>
+      </ul>
+      <p class="gmA-body">Unique. Powerful. <span class="gmA-accent-orange">Unlike anything else</span> created before.</p>
+    
+    
+    
+    
+    </div>
+    <div class="gmA-peek-modal" id="gmAPeekModal">
+      <a class="gmA-peek-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="gmA-peek-card">
+        <a class="gmA-peek-close" href="#" aria-label="Close popup">X</a>
+        <div class="gmA-peek-popup-media" aria-label="Peek media preview"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+

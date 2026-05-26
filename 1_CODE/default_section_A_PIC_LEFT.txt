@@ -10,6 +10,7 @@
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a10847f6ab833.54349218_systeme_A_PIC_LEFT.png");
     --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -246,6 +247,14 @@
     background-size: cover;
     background-position: center;
   }
+  .gmA-root .gmA-peek-media iframe,
+  .gmA-root .gmA-peek-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    display: block;
+  }
 
   .gmA-root .gmA-peek-ring {
     position: absolute;
@@ -329,6 +338,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: #111111;
+  }
+  .gmA-root .gmA-peek-popup-media iframe,
+  .gmA-root .gmA-peek-popup-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+    display: block;
   }
 
   .gmA-root .gmA-h1 .gmA-accent-orange {
@@ -452,5 +469,79 @@
     </div>
   </section>
 </div>
+
+<script>
+  (function () {
+    var root = document.querySelector(".gmA-root");
+    if (!root) return;
+    var ringHost = root.querySelector(".gmA-peek-media");
+    var popupHost = root.querySelector(".gmA-peek-popup-media");
+    var modal = root.querySelector("#gmAPeekModal");
+    if (!ringHost || !popupHost || !modal) return;
+
+    function getVideoUrl() {
+      return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^["']|["']$/g, "");
+    }
+
+    function youtubeId(url) {
+      var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{6,})/);
+      return m ? m[1] : "";
+    }
+
+    function makeMedia(url, ringMode) {
+      var yid = youtubeId(url);
+      if (yid) {
+        var iframe = document.createElement("iframe");
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        if (ringMode) {
+          iframe.src = "https://www.youtube.com/embed/" + yid + "?autoplay=1&mute=1&controls=0&loop=1&playlist=" + yid + "&rel=0&modestbranding=1&playsinline=1";
+          iframe.title = "Peek ring video";
+        } else {
+          iframe.src = "https://www.youtube.com/embed/" + yid + "?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1";
+          iframe.title = "Peek popup video";
+        }
+        return iframe;
+      }
+
+      var video = document.createElement("video");
+      video.src = url;
+      video.playsInline = true;
+      if (ringMode) {
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+      } else {
+        video.autoplay = true;
+        video.controls = true;
+      }
+      return video;
+    }
+
+    function mountRing() {
+      var url = getVideoUrl();
+      if (!url) return;
+      ringHost.innerHTML = "";
+      ringHost.appendChild(makeMedia(url, true));
+    }
+
+    function mountPopup() {
+      var url = getVideoUrl();
+      if (!url) return;
+      popupHost.innerHTML = "";
+      popupHost.appendChild(makeMedia(url, false));
+    }
+
+    function syncPopupToHash() {
+      if (location.hash === "#gmAPeekModal") mountPopup();
+      else popupHost.innerHTML = "";
+    }
+
+    mountRing();
+    syncPopupToHash();
+    window.addEventListener("hashchange", syncPopupToHash);
+  })();
+</script>
 
 

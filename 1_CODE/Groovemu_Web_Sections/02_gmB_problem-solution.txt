@@ -8,7 +8,7 @@
 
   .gmB02-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0020060.45857897_2_emu_2_PROBLEMSOLUTION.png?v=20260526_133805?v=20260526_133644");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0020060.45857897_2_emu_2_PROBLEMSOLUTION.png?v=/26/00Tu_133941?v=20260526_133805?v=20260526_133644");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -275,7 +275,7 @@
     border-radius: 50%;
     overflow: hidden;
     opacity: calc(var(--gmB02-peek-media-opacity-percent, var(--gmA01-peek-media-opacity-percent, 35)) / 100);
-    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_133805?v=20260526_133644");
+    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=/26/00Tu_133941?v=20260526_133805?v=20260526_133644");
     background-size: cover;
     background-position: center;
   }
@@ -458,7 +458,7 @@
       <a class="gmB02-peek-backdrop" href="#" aria-label="Close popup"></a>
       <div class="gmB02-peek-card">
         <a class="gmB02-peek-close" href="#" aria-label="Close popup">X</a>
-        <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_133805?v=20260526_133644" alt="Peek media preview" />
+        <img class="gmB02-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=/26/00Tu_133941?v=20260526_133805?v=20260526_133644" alt="Peek media preview" />
       </div>
     </div>
   </section>

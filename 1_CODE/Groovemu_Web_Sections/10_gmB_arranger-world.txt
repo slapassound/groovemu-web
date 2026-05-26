@@ -8,7 +8,7 @@
 
   .gmB10-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00161e4.47673414_2_emu_10_ARRANGERWORLD.png?v=20260526_133805?v=20260526_133644?v=20260526_133534");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00161e4.47673414_2_emu_10_ARRANGERWORLD.png?v=/26/00Tu_133941?v=20260526_133805?v=20260526_133644?v=20260526_133534");
 
     /* ===== Siin saad tekste sättida ===== */
 

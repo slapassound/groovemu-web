@@ -9,6 +9,8 @@
   .gmA11-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb27c8343.72255407_2_emu_11_FORWHOM.png");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -76,6 +78,12 @@
 
     /* Taust */
     --bg-main: #111111;
+    --gmA11-peek-x: 46.3%;
+    --gmA11-peek-y: 330px;
+    --gmA11-peek-size: 215px;
+    --gmA11-peek-mobile-size-factor: 0.5;
+    --gmA11-peek-media-opacity-percent: 50;
+    --gmA11-peek-ring-overlay-opacity-percent: 50;
 
     width: 100%;
     max-width: 100%;
@@ -219,7 +227,118 @@
   .gmA11-root .gmA11-accent-orange { color: var(--accent-orange); }
   .gmA11-root .gmA11-accent-white { color: var(--accent-white); }
 
-  .gmA11-root .gmA11-h1 .gmA11-accent-orange {
+  
+
+  .gmA11-root .gmA11-peek {
+    position: absolute;
+    left: var(--gmA11-peek-x);
+    top: var(--gmA11-peek-y);
+    width: var(--gmA11-peek-size);
+    height: var(--gmA11-peek-size);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    cursor: pointer;
+  }
+  .gmA11-root .gmA11-peek-media {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: calc(var(--gmA11-peek-media-opacity-percent) / 100);
+    background-image: var(--peek-image);
+    background-size: cover;
+    background-position: center;
+  }
+  .gmA11-root .gmA11-peek-media iframe,
+  .gmA11-root .gmA11-peek-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    display: block;
+  }
+  .gmA11-root .gmA11-peek-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid #ff6000;
+    background: rgba(26, 26, 26, calc(var(--gmA11-peek-ring-overlay-opacity-percent) / 100));
+  }
+  .gmA11-root .gmA11-peek-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+  }
+  .gmA11-root .gmA11-peek-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+  .gmA11-root .gmA11-peek-modal:target { display: flex; }
+  .gmA11-root .gmA11-peek-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+  .gmA11-root .gmA11-peek-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+  .gmA11-root .gmA11-peek-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+  .gmA11-root .gmA11-peek-popup-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    display: block;
+    background-image: var(--peek-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #111111;
+  }
+  .gmA11-root .gmA11-peek-popup-media iframe,
+  .gmA11-root .gmA11-peek-popup-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+    display: block;
+  }.gmA11-root .gmA11-h1 .gmA11-accent-orange {
     color: transparent;
     background: linear-gradient(
       180deg,
@@ -278,6 +397,15 @@
     .gmA11-root .gmA11-media::after {
       display: none;
     }
+    .gmA11-root .gmA11-peek {
+      left: 50%;
+      top: var(--gmA11-peek-y);
+      width: calc(var(--gmA11-peek-size) * var(--gmA11-peek-mobile-size-factor));
+      height: calc(var(--gmA11-peek-size) * var(--gmA11-peek-mobile-size-factor));
+    }
+    .gmA11-root .gmA11-peek-text {
+      font-size: 16px;
+    }
   }
 
   @media (max-width: 760px) {
@@ -292,6 +420,11 @@
   <section class="gmA11-block">
     <div class="gmA11-grain" aria-hidden="true"></div>
     <div class="gmA11-media" aria-label="Groovemu for whom section"></div>
+    <a class="gmA11-peek" href="#gmA11PeekModal" aria-label="Peek inside">
+      <span class="gmA11-peek-media"></span>
+      <span class="gmA11-peek-ring"></span>
+      <span class="gmA11-peek-text">PEEK INSIDE</span>
+    </a>
     <div class="gmA11-text">
       <h1 class="gmA11-h1"><span class="gmA11-accent-orange">WHO</span> IS GROOVEMU FOR?</h1>
 
@@ -315,6 +448,65 @@
 
       <p class="gmA11-body">If you ever wished your REAPER DAW felt more alive, GROOVEMU was made for you.</p>
     </div>
+  
+    <div class="gmA11-peek-modal" id="gmA11PeekModal">
+      <a class="gmA11-peek-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="gmA11-peek-card">
+        <a class="gmA11-peek-close" href="#" aria-label="Close popup">X</a>
+        <div class="gmA11-peek-popup-media" aria-label="Peek media preview"></div>
+      </div>
+    </div>
   </section>
 </div>
 
+
+
+<script>
+  (function () {
+    var root = document.querySelector(".gmA11-root");
+    if (!root) return;
+    var ringHost = root.querySelector(".gmA11-peek-media");
+    var popupHost = root.querySelector(".gmA11-peek-popup-media");
+    var modal = root.querySelector("#gmA11PeekModal");
+    if (!ringHost || !popupHost || !modal) return;
+    var desktopPeekY = getComputedStyle(root).getPropertyValue("--gmA11-peek-y").trim() || "330px";
+
+    function getVideoUrl() { return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^[\"']|[\"']$/g, ""); }
+    function youtubeId(url) { var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{6,})/); return m ? m[1] : ""; }
+    function makeMedia(url, ringMode) {
+      var yid = youtubeId(url);
+      if (yid) {
+        var iframe = document.createElement("iframe");
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        iframe.src = ringMode
+          ? "https://www.youtube.com/embed/" + yid + "?autoplay=1&mute=1&controls=0&loop=1&playlist=" + yid + "&rel=0&modestbranding=1&playsinline=1"
+          : "https://www.youtube.com/embed/" + yid + "?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1";
+        return iframe;
+      }
+      var video = document.createElement("video");
+      video.src = url;
+      video.playsInline = true;
+      if (ringMode) { video.autoplay = true; video.muted = true; video.loop = true; } else { video.autoplay = true; video.controls = true; }
+      return video;
+    }
+    function mountRing(){ var url=getVideoUrl(); if(!url) return; ringHost.innerHTML=""; ringHost.appendChild(makeMedia(url,true)); }
+    function mountPopup(){ var url=getVideoUrl(); if(!url) return; popupHost.innerHTML=""; popupHost.appendChild(makeMedia(url,false)); }
+    function syncPopupToHash(){ if(location.hash==="#gmA11PeekModal") mountPopup(); else popupHost.innerHTML=""; }
+    function placePeekOnMobile(){
+      if(window.innerWidth>960){ root.style.setProperty("--gmA11-peek-y", desktopPeekY); return; }
+      var media=root.querySelector(".gmA11-media"); if(!media) return;
+      var blockRect=root.querySelector(".gmA11-block").getBoundingClientRect();
+      var mediaRect=media.getBoundingClientRect();
+      var centerY=(mediaRect.top+mediaRect.height/2)-blockRect.top;
+      root.style.setProperty("--gmA11-peek-y", centerY + "px");
+    }
+    function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+
+    mountRing(); syncPopupToHash(); placePeekOnMobile();
+    window.addEventListener("hashchange", syncPopupToHash);
+    window.addEventListener("hashchange", lockHashScrollOnMobile);
+    window.addEventListener("resize", placePeekOnMobile);
+  })();
+</script>

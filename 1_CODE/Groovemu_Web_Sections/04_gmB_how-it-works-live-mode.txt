@@ -9,6 +9,8 @@
   .gmB04-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecaff3cbe5.74975222_2_emu_4_HOWITWORKS_LIVEMODE.png");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -76,6 +78,12 @@
 
     /* Taust */
     --bg-main: #111111;
+    --gmB04-peek-x: 50%;
+    --gmB04-peek-y: 330px;
+    --gmB04-peek-size: 215px;
+    --gmB04-peek-mobile-size-factor: 0.5;
+    --gmB04-peek-media-opacity-percent: 50;
+    --gmB04-peek-ring-overlay-opacity-percent: 50;
 
     width: 100%;
     max-width: 100%;
@@ -271,7 +279,118 @@
   .gmB04-root .gmB04-accent-orange { color: var(--accent-orange); }
   .gmB04-root .gmB04-accent-white { color: var(--accent-white); }
 
-  .gmB04-root .gmB04-grain {
+  
+
+  .gmB04-root .gmB04-peek {
+    position: absolute;
+    left: var(--gmB04-peek-x);
+    top: var(--gmB04-peek-y);
+    width: var(--gmB04-peek-size);
+    height: var(--gmB04-peek-size);
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    cursor: pointer;
+  }
+  .gmB04-root .gmB04-peek-media {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: calc(var(--gmB04-peek-media-opacity-percent) / 100);
+    background-image: var(--peek-image);
+    background-size: cover;
+    background-position: center;
+  }
+  .gmB04-root .gmB04-peek-media iframe,
+  .gmB04-root .gmB04-peek-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    display: block;
+  }
+  .gmB04-root .gmB04-peek-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid #ff6000;
+    background: rgba(26, 26, 26, calc(var(--gmB04-peek-ring-overlay-opacity-percent) / 100));
+  }
+  .gmB04-root .gmB04-peek-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+  }
+  .gmB04-root .gmB04-peek-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+  .gmB04-root .gmB04-peek-modal:target { display: flex; }
+  .gmB04-root .gmB04-peek-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+  .gmB04-root .gmB04-peek-card {
+    position: relative;
+    z-index: 2;
+    width: min(780px, 100%);
+    background: linear-gradient(160deg, #191919 0%, #121212 100%);
+    border: 1px solid rgba(255, 96, 0, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+    padding: 14px;
+  }
+  .gmB04-root .gmB04-peek-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 96, 0, 0.5);
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ff6000;
+    cursor: pointer;
+  }
+  .gmB04-root .gmB04-peek-popup-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    display: block;
+    background-image: var(--peek-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #111111;
+  }
+  .gmB04-root .gmB04-peek-popup-media iframe,
+  .gmB04-root .gmB04-peek-popup-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+    display: block;
+  }.gmB04-root .gmB04-grain {
     position: absolute;
     inset: 0;
     z-index: 3;
@@ -315,6 +434,15 @@
 
     .gmB04-root .gmB04-media::after {
       display: none;
+    }
+    .gmB04-root .gmB04-peek {
+      left: 50%;
+      top: var(--gmB04-peek-y);
+      width: calc(var(--gmB04-peek-size) * var(--gmB04-peek-mobile-size-factor));
+      height: calc(var(--gmB04-peek-size) * var(--gmB04-peek-mobile-size-factor));
+    }
+    .gmB04-root .gmB04-peek-text {
+      font-size: 16px;
     }
   }
 
@@ -368,6 +496,70 @@
     </div>
 
     <div class="gmB04-media" aria-label="Groovemu live mode section"></div>
+    <a class="gmB04-peek" href="#gmB04PeekModal" aria-label="Peek inside">
+      <span class="gmB04-peek-media"></span>
+      <span class="gmB04-peek-ring"></span>
+      <span class="gmB04-peek-text">PEEK INSIDE</span>
+    </a>
+  
+    <div class="gmB04-peek-modal" id="gmB04PeekModal">
+      <a class="gmB04-peek-backdrop" href="#" aria-label="Close popup"></a>
+      <div class="gmB04-peek-card">
+        <a class="gmB04-peek-close" href="#" aria-label="Close popup">X</a>
+        <div class="gmB04-peek-popup-media" aria-label="Peek media preview"></div>
+      </div>
+    </div>
   </section>
 </div>
 
+
+
+<script>
+  (function () {
+    var root = document.querySelector(".gmB04-root");
+    if (!root) return;
+    var ringHost = root.querySelector(".gmB04-peek-media");
+    var popupHost = root.querySelector(".gmB04-peek-popup-media");
+    var modal = root.querySelector("#gmB04PeekModal");
+    if (!ringHost || !popupHost || !modal) return;
+    var desktopPeekY = getComputedStyle(root).getPropertyValue("--gmB04-peek-y").trim() || "330px";
+
+    function getVideoUrl() { return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^[\"']|[\"']$/g, ""); }
+    function youtubeId(url) { var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{6,})/); return m ? m[1] : ""; }
+    function makeMedia(url, ringMode) {
+      var yid = youtubeId(url);
+      if (yid) {
+        var iframe = document.createElement("iframe");
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        iframe.src = ringMode
+          ? "https://www.youtube.com/embed/" + yid + "?autoplay=1&mute=1&controls=0&loop=1&playlist=" + yid + "&rel=0&modestbranding=1&playsinline=1"
+          : "https://www.youtube.com/embed/" + yid + "?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1";
+        return iframe;
+      }
+      var video = document.createElement("video");
+      video.src = url;
+      video.playsInline = true;
+      if (ringMode) { video.autoplay = true; video.muted = true; video.loop = true; } else { video.autoplay = true; video.controls = true; }
+      return video;
+    }
+    function mountRing(){ var url=getVideoUrl(); if(!url) return; ringHost.innerHTML=""; ringHost.appendChild(makeMedia(url,true)); }
+    function mountPopup(){ var url=getVideoUrl(); if(!url) return; popupHost.innerHTML=""; popupHost.appendChild(makeMedia(url,false)); }
+    function syncPopupToHash(){ if(location.hash==="#gmB04PeekModal") mountPopup(); else popupHost.innerHTML=""; }
+    function placePeekOnMobile(){
+      if(window.innerWidth>960){ root.style.setProperty("--gmB04-peek-y", desktopPeekY); return; }
+      var media=root.querySelector(".gmB04-media"); if(!media) return;
+      var blockRect=root.querySelector(".gmB04-block").getBoundingClientRect();
+      var mediaRect=media.getBoundingClientRect();
+      var centerY=(mediaRect.top+mediaRect.height/2)-blockRect.top;
+      root.style.setProperty("--gmB04-peek-y", centerY + "px");
+    }
+    function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+
+    mountRing(); syncPopupToHash(); placePeekOnMobile();
+    window.addEventListener("hashchange", syncPopupToHash);
+    window.addEventListener("hashchange", lockHashScrollOnMobile);
+    window.addEventListener("resize", placePeekOnMobile);
+  })();
+</script>

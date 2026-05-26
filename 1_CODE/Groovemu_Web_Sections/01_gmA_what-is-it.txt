@@ -10,6 +10,7 @@
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
     --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-video-url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -81,6 +82,7 @@
     /* H1 ja esimese body rea vahelise vahe keskpunkt (JS-vaba paigutus) */
     --gmA01-peek-y: 330px;
     --gmA01-peek-size: 215px;
+    --gmA01-peek-mobile-size-factor: 0.5;
     /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
     --gmA01-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
@@ -296,6 +298,14 @@
     background-size: cover;
     background-position: center;
   }
+  .gmA01-root .gmA01-peek-media iframe,
+  .gmA01-root .gmA01-peek-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    display: block;
+  }
 
   .gmA01-root .gmA01-peek-ring {
     position: absolute;
@@ -380,6 +390,14 @@
     background-repeat: no-repeat;
     background-color: #111111;
   }
+  .gmA01-root .gmA01-peek-popup-media iframe,
+  .gmA01-root .gmA01-peek-popup-media video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+    display: block;
+  }
 
   .gmA01-root .gmA01-grain {
     position: absolute;
@@ -425,9 +443,9 @@
     }
     .gmA01-root .gmA01-peek {
       left: 50%;
-      top: 76%;
-      width: 170px;
-      height: 170px;
+      top: var(--gmA01-peek-y);
+      width: calc(var(--gmA01-peek-size) * var(--gmA01-peek-mobile-size-factor));
+      height: calc(var(--gmA01-peek-size) * var(--gmA01-peek-mobile-size-factor));
     }
     .gmA01-root .gmA01-peek-text {
       font-size: 16px;
@@ -482,24 +500,25 @@
   </section>
 </div>
 
+
+
 <script>
   (function () {
     var root = document.querySelector(".gmA01-root");
     if (!root) return;
-    var h1 = root.querySelector(".gmA01-h1");
-    var firstBody = root.querySelector(".gmA01-body");
-    if (!h1 || !firstBody) return;
-
-    function setPeekY() {
-      var rootRect = root.getBoundingClientRect();
-      var h1Rect = h1.getBoundingClientRect();
-      var bodyRect = firstBody.getBoundingClientRect();
-      var centerY = ((h1Rect.bottom + bodyRect.top) / 2) - rootRect.top;
-      root.style.setProperty("--gmA01-peek-y", centerY + "px");
-    }
-
-    setPeekY();
-    window.addEventListener("resize", setPeekY);
+    var ringHost = root.querySelector(".gmA01-peek-media");
+    var popupHost = root.querySelector(".gmA01-peek-popup-media");
+    var modal = root.querySelector("#gmA01PeekModal");
+    if (!ringHost || !popupHost || !modal) return;
+    var desktopPeekY = getComputedStyle(root).getPropertyValue("--gmA01-peek-y").trim() || "330px";
+    function getVideoUrl() { return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^[\"']|[\"']$/g, ""); }
+    function youtubeId(url) { var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{6,})/); return m ? m[1] : ""; }
+    function makeMedia(url, ringMode) { var yid=youtubeId(url); if (yid) { var iframe=document.createElement("iframe"); iframe.allow="autoplay; encrypted-media; picture-in-picture"; iframe.referrerPolicy="strict-origin-when-cross-origin"; iframe.allowFullscreen=true; iframe.src=ringMode?"https://www.youtube.com/embed/"+yid+"?autoplay=1&mute=1&controls=0&loop=1&playlist="+yid+"&rel=0&modestbranding=1&playsinline=1":"https://www.youtube.com/embed/"+yid+"?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1"; return iframe; } var video=document.createElement("video"); video.src=url; video.playsInline=true; if(ringMode){video.autoplay=true;video.muted=true;video.loop=true;} else {video.autoplay=true;video.controls=true;} return video; }
+    function mountRing(){ var url=getVideoUrl(); if(!url) return; ringHost.innerHTML=""; ringHost.appendChild(makeMedia(url,true)); }
+    function mountPopup(){ var url=getVideoUrl(); if(!url) return; popupHost.innerHTML=""; popupHost.appendChild(makeMedia(url,false)); }
+    function syncPopupToHash(){ if(location.hash==="#gmA01PeekModal") mountPopup(); else popupHost.innerHTML=""; }
+    function placePeekOnMobile(){ if(window.innerWidth>960){ root.style.setProperty("--gmA01-peek-y", desktopPeekY); return; } var media=root.querySelector(".gmA01-media"); if(!media) return; var blockRect=root.querySelector(".gmA01-block").getBoundingClientRect(); var mediaRect=media.getBoundingClientRect(); var centerY=(mediaRect.top+mediaRect.height/2)-blockRect.top; root.style.setProperty("--gmA01-peek-y", centerY + "px"); }
+    function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    mountRing(); syncPopupToHash(); placePeekOnMobile(); window.addEventListener("hashchange", syncPopupToHash); window.addEventListener("hashchange", lockHashScrollOnMobile); window.addEventListener("resize", placePeekOnMobile);
   })();
 </script>
-

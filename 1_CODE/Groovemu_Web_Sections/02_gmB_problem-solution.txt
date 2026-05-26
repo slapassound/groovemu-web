@@ -76,7 +76,7 @@
 
     /* Taust */
     --bg-main: #111111;
-    --gmB02-peek-x: 60%;
+    --gmB02-peek-x: 53%;
     /* H1 ja esimese body rea vahelise vahe keskpunkt (JS-vaba paigutus) */
     --gmB02-peek-y: 330px;
     --gmB02-peek-size: 215px;

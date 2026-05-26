@@ -397,7 +397,7 @@
     <div class="gmB14-grain" aria-hidden="true"></div>
 
     <div class="gmB14-text">
-      <h1 class="gmB14-h1">ALWAYS EVOLVING | <span class="gmB14-accent-orange">HELP</span> THE EMU SPREAD THE MADNESS</h1>
+      <h1 class="gmB14-h1">ALWAYS EVOLVING 123 | <span class="gmB14-accent-orange">HELP</span> THE EMU SPREAD THE MADNESS</h1>
 
       <p class="gmB14-body">GROOVEMU is constantly tested, improved and updated. I actively test the system myself and continuously improve workflow, performance and new ideas whenever possible.</p>
       <p class="gmB14-body">Your feedback and ideas will help GROOVEMU evolve even further. So jump in, explore, experiment, share ideas and help make GROOVEMU even better together.</p>

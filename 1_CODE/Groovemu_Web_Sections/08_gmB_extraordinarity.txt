@@ -8,7 +8,7 @@
 
   .gmB08-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb013fd41.06469915_2_emu_8_EXTRAORDINARITY.png?v=20260526_133644?v=20260526_133534");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb013fd41.06469915_2_emu_8_EXTRAORDINARITY.png?v=20260526_133805?v=20260526_133644?v=20260526_133534");
 
     /* ===== Siin saad tekste sättida ===== */
 

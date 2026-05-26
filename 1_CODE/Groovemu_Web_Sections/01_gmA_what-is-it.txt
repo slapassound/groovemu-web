@@ -263,6 +263,9 @@
     letter-spacing: 0.02em;
     transition: background 0.2s ease, color 0.2s ease;
   }
+  .gmA01-root .gmA01-cta-too-old {
+    margin-left: 50px;
+  }
 
   .gmA01-root .gmA01-cta:hover {
     background: var(--accent-orange);
@@ -483,7 +486,7 @@
       </ul>
       <div class="gmA01-cta-wrap">
         <a class="gmA01-cta" href="#">Grab it for free</a>
-        <a class="gmA01-cta" href="#gmA01PeekModal">I'm too old for this shit</a>
+        <a class="gmA01-cta gmA01-cta-too-old" href="#gmA01PeekModal">I'm too old for this shit</a>
       </div>
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
     </div>

@@ -8,7 +8,7 @@
 
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
-    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png?v=20260526_134143?v=20260526_133644?v=20260526_133534");
+    --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
 
     /* ===== Siin saad tekste sättida ===== */
 
@@ -291,7 +291,7 @@
     border-radius: 50%;
     overflow: hidden;
     opacity: calc(var(--gmA01-peek-media-opacity-percent) / 100);
-    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_134143?v=20260526_133644?v=20260526_133534");
+    background-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     background-size: cover;
     background-position: center;
   }
@@ -461,7 +461,7 @@
       </ul>
       <div class="gmA01-cta-wrap">
         <a class="gmA01-cta" href="#">Grab it for free</a>
-        <img class="gmA01-cta-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_134143?v=20260526_133644?v=20260526_133534" alt="Emu cannot decide button" />
+        <img class="gmA01-cta-gif" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Emu cannot decide button" />
         <a class="gmA01-cta" href="#">I'm too old for this shit</a>
       </div>
       <p class="gmA01-sub">BUILT FOR REAPER. MADE FOR WINDOWS.</p>
@@ -470,7 +470,7 @@
       <a class="gmA01-peek-backdrop" href="#" aria-label="Close popup"></a>
       <div class="gmA01-peek-card">
         <a class="gmA01-peek-close" href="#" aria-label="Close popup">X</a>
-        <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp?v=20260526_134143?v=20260526_133644?v=20260526_133534" alt="Peek media preview" />
+        <img class="gmA01-peek-popup-media" src="https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp" alt="Peek media preview" />
       </div>
     </div>
   </section>

@@ -501,18 +501,17 @@
     function mountPopup(){
       var url=getVideoUrl();
       popupHost.innerHTML="";
+      popupHost.style.backgroundImage = "none";
       if(url){
-        popupHost.style.backgroundImage = "none";
         popupHost.appendChild(makeMedia(url,false));
         return;
       }
       var imgUrl = getPeekImageUrl();
-      if(!imgUrl){
-        popupHost.style.backgroundImage = "var(--peek-image)";
-        return;
-      }
-      var fresh = imgUrl + (imgUrl.indexOf("?") === -1 ? "?" : "&") + "r=" + Date.now();
-      popupHost.style.backgroundImage = "url(\"" + fresh + "\")";
+      if(!imgUrl) return;
+      var img = document.createElement("img");
+      img.alt = "Peek media preview";
+      img.src = imgUrl + (imgUrl.indexOf("?") === -1 ? "?" : "&") + "r=" + Date.now();
+      popupHost.appendChild(img);
     }
     function syncPopupToHash(){ if(location.hash==="#gmA03PeekModal") mountPopup(); else popupHost.innerHTML=""; }
     function placePeekOnMobile(){
@@ -525,7 +524,7 @@
     }
     function lockHashScrollOnMobile(){ if(window.innerWidth>960) return; var x=window.scrollX,y=window.scrollY; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
     function openModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.add("is-open"); mountPopup(); requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
-    function closeModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.remove("is-open"); popupHost.innerHTML=""; popupHost.style.backgroundImage = "var(--peek-image)"; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
+    function closeModalNoScroll(e){ if(e) e.preventDefault(); var x=window.scrollX,y=window.scrollY; modal.classList.remove("is-open"); popupHost.innerHTML=""; popupHost.style.backgroundImage = ""; requestAnimationFrame(function(){ window.scrollTo(x,y); }); }
     function bindModalHandlers(){ var opener=root.querySelector(".gmA03-peek"); var closeBtn=modal.querySelector(".gmA03-peek-close"); var backdrop=modal.querySelector(".gmA03-peek-backdrop"); if(opener) opener.addEventListener("click", openModalNoScroll); if(closeBtn) closeBtn.addEventListener("click", closeModalNoScroll); if(backdrop) backdrop.addEventListener("click", closeModalNoScroll); window.addEventListener("keydown", function(ev){ if(ev.key==="Escape") closeModalNoScroll(ev); }); }
 
     mountRing(); syncPopupToHash(); placePeekOnMobile(); bindModalHandlers();

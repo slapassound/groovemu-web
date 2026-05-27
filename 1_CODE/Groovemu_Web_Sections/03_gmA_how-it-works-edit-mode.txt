@@ -9,7 +9,7 @@
   .gmA03-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0014582.27104758_2_emu_3_HOWITWORKSEDITMODE.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16ba0b55b2d5.82991264_emu_GIF_edit_in_reaper.gif");
+    --peek-image: url("");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
@@ -350,8 +350,7 @@
     background-color: #111111;
   }
   .gmA03-root .gmA03-peek-popup-media iframe,
-  .gmA03-root .gmA03-peek-popup-media video,
-  .gmA03-root .gmA03-peek-popup-media img {
+  .gmA03-root .gmA03-peek-popup-media video {
     width: 100%;
     height: 100%;
     border: 0;
@@ -473,11 +472,6 @@
     var desktopPeekY = getComputedStyle(root).getPropertyValue("--gmA03-peek-y").trim() || "330px";
 
     function getVideoUrl() { return getComputedStyle(root).getPropertyValue("--peek-video-url").trim().replace(/^[\"']|[\"']$/g, ""); }
-    function getPeekImageUrl() {
-      var raw = getComputedStyle(root).getPropertyValue("--peek-image").trim();
-      var m = raw.match(/url\\((['\"]?)(.*?)\\1\\)/);
-      return m ? m[2] : "";
-    }
     function youtubeId(url) { var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{6,})/); return m ? m[1] : ""; }
     function makeMedia(url, ringMode) {
       var yid = youtubeId(url);
@@ -498,20 +492,7 @@
       return video;
     }
     function mountRing(){ var url=getVideoUrl(); if(!url) return; ringHost.innerHTML=""; ringHost.appendChild(makeMedia(url,true)); }
-    function mountPopup(){
-      var url=getVideoUrl();
-      popupHost.innerHTML="";
-      if(url){
-        popupHost.appendChild(makeMedia(url,false));
-        return;
-      }
-      var imgUrl = getPeekImageUrl();
-      if(!imgUrl) return;
-      var img = document.createElement("img");
-      img.alt = "Peek media preview";
-      img.src = imgUrl + (imgUrl.indexOf("?") === -1 ? "?" : "&") + "r=" + Date.now();
-      popupHost.appendChild(img);
-    }
+    function mountPopup(){ var url=getVideoUrl(); if(!url) return; popupHost.innerHTML=""; popupHost.appendChild(makeMedia(url,false)); }
     function syncPopupToHash(){ if(location.hash==="#gmA03PeekModal") mountPopup(); else popupHost.innerHTML=""; }
     function placePeekOnMobile(){
       if(window.innerWidth>960){ root.style.setProperty("--gmA03-peek-y", desktopPeekY); return; }

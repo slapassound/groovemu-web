@@ -9,7 +9,7 @@
   .gmB02-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb0020060.45857897_2_emu_2_PROBLEMSOLUTION.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16b2e469a8a4.46956083_emu_GIF_main_REAPER_ENGINE_VAR1-VAR4.gif");
+    --peek-image: url("");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */

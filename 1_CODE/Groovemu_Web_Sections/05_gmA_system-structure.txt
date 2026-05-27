@@ -84,7 +84,7 @@
     --gmA05-peek-mobile-size-factor: 0.5;
     --gmA05-peek-media-opacity-percent: 50;
     --gmA05-peek-ring-overlay-opacity-percent: 50;
-    --gmA05-popup-scale: 1.5;
+    --gmA05-popup-scale: 1.9;
 
     width: 100%;
     max-width: 100%;

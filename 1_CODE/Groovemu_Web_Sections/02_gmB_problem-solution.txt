@@ -87,6 +87,7 @@
     --gmB02-peek-media-opacity-percent: 50;
     /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
     --gmB02-peek-ring-overlay-opacity-percent: 50;
+    --gmB02-popup-scale: 1.9;
 
     width: 100%;
     max-width: 100%;
@@ -340,7 +341,7 @@
   .gmB02-root .gmB02-peek-card {
     position: relative;
     z-index: 2;
-    width: min(1170px, 100%);
+    width: min(calc(780px * var(--gmB02-popup-scale)), 100%);
     background: linear-gradient(160deg, #191919 0%, #121212 100%);
     border: 1px solid rgba(255, 96, 0, 0.45);
     border-radius: 12px;

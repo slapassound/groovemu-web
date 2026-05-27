@@ -84,6 +84,7 @@
     --gmA13-peek-mobile-size-factor: 0.5;
     --gmA13-peek-media-opacity-percent: 50;
     --gmA13-peek-ring-overlay-opacity-percent: 50;
+    --gmA13-popup-scale: 1.9;
 
     width: 100%;
     max-width: 100%;
@@ -299,7 +300,7 @@
   .gmA13-root .gmA13-peek-card {
     position: relative;
     z-index: 2;
-    width: min(1170px, 100%);
+    width: min(calc(780px * var(--gmA13-popup-scale)), 100%);
     background: linear-gradient(160deg, #191919 0%, #121212 100%);
     border: 1px solid rgba(255, 96, 0, 0.45);
     border-radius: 12px;

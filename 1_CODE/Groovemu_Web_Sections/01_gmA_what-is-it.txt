@@ -9,7 +9,8 @@
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16ab2364ed00.43072428_Groovemu_Reaper_Engine.png");
+    --peek-popup-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sĆ¤ttida ===== */
@@ -385,7 +386,7 @@
     aspect-ratio: 16 / 9;
     border-radius: 8px;
     display: block;
-    background-image: var(--peek-image);
+    background-image: var(--peek-popup-image);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

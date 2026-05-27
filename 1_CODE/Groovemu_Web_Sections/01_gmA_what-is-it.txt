@@ -9,7 +9,7 @@
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16ab2364ed00.43072428_Groovemu_Reaper_Engine.png");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
@@ -355,7 +355,7 @@
   .gmA01-root .gmA01-peek-card {
     position: relative;
     z-index: 2;
-    width: min(780px, 100%);
+    width: min(1170px, 100%);
     background: linear-gradient(160deg, #191919 0%, #121212 100%);
     border: 1px solid rgba(255, 96, 0, 0.45);
     border-radius: 12px;

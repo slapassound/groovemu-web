@@ -9,7 +9,7 @@
   .gmA07-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb015fc34.12189839_2_emu_7_SETUP.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a171c9e444212.05902259_emu_GIF_07_setup.gif");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
@@ -449,12 +449,13 @@
       <p class="gmA07-body">Just place the provided files into the correct folders:</p>
 
       <div class="gmA07-pair-item">
-        <p>1. Groovemu Reaper Engine</p>
+        <p>1. Groovemu Reaper Engine (.dll)</p>
         <p><span class="gmA07-accent-orange">→</span> REAPER UserPlugins folder</p>
+        <p>C:\Users\YOUR_USERNAME\AppData\Roaming\REAPER\UserPlugins\</p>
       </div>
 
       <div class="gmA07-pair-item">
-        <p>2. Groovemu Live Transposer</p>
+        <p>2. Groovemu Live Transposer (.vst3)</p>
         <p><span class="gmA07-accent-orange">→</span> Your normal VST3 folder</p>
       </div>
 

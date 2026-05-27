@@ -9,7 +9,7 @@
   .gmB06-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a142b7637c889.69712977_2_emu_6_SMARTTRACKS.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16cdeee84635.55126457_emu_GIF_06_health.gif");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */

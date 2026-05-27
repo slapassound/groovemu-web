@@ -9,7 +9,7 @@
   .gmB08-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb013fd41.06469915_2_emu_8_EXTRAORDINARITY.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16d3d82b2036.11124836_emu_GIF_08_extraordinarity.gif");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */

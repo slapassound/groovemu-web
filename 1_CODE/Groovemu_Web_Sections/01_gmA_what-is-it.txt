@@ -1,4 +1,4 @@
-<style>
+﻿<style>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
   .gmA01-root,
@@ -9,20 +9,20 @@
   .gmA01-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecb00274d8.85055755_2_emu_1_WHATISIT.png");
-    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16ab2364ed00.43072428_Groovemu_Reaper_Engine.png");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/65fe75f0eacce_toooldforthis....webp");
     --peek-video-url: "";
 
-    /* ===== Siin saad tekste sättida ===== */
+    /* ===== Siin saad tekste sĆ¤ttida ===== */
 
-    /* Fondi üldseaded (kõik tekstid) */
+    /* Fondi Ć¼ldseaded (kĆµik tekstid) */
     --font-main: "Roboto", sans-serif;
     --font-weight-main: 300;
 
-    /* Rõhutused (2 eri accent värvi) */
+    /* RĆµhutused (2 eri accent vĆ¤rvi) */
     --accent-orange: #ff6000;
     --accent-white: #ffffff;
 
-    /* Tekstivärvid */
+    /* TekstivĆ¤rvid */
     --h1-color: #ffffff;
     --sub-color: #bbbbbb;
     --body-color: #888888;
@@ -68,12 +68,12 @@
     /* Bullet-ploki horisontaalne nihe */
     --bullets-offset-x: 20px;
 
-    /* Desktop kõrvuti vaade: teksti ja pildi suhe */
+    /* Desktop kĆµrvuti vaade: teksti ja pildi suhe */
     --block-gap: 34px;
     --image-width-boost: 115%;
     --image-overlap: 15%;
 
-    /* Stack-vaade (kui pilt hüppab teksti alla) */
+    /* Stack-vaade (kui pilt hĆ¼ppab teksti alla) */
     --stack-gap: 18px;
 
     /* Taust */
@@ -83,9 +83,9 @@
     --gmA01-peek-y: 330px;
     --gmA01-peek-size: 215px;
     --gmA01-peek-mobile-size-factor: 0.5;
-    /* Ringi sees oleva meedia läbipaistvus protsentides (0-100) */
+    /* Ringi sees oleva meedia lĆ¤bipaistvus protsentides (0-100) */
     --gmA01-peek-media-opacity-percent: 50;
-    /* Ringi tumeda overlay kihi läbipaistvus protsentides (0-100) */
+    /* Ringi tumeda overlay kihi lĆ¤bipaistvus protsentides (0-100) */
     --gmA01-peek-ring-overlay-opacity-percent: 50;
     --gmA01-popup-scale: 1.9;
 
@@ -526,3 +526,4 @@
     mountRing(); syncPopupToHash(); placePeekOnMobile(); bindModalHandlers(); window.addEventListener("hashchange", syncPopupToHash); window.addEventListener("hashchange", lockHashScrollOnMobile); window.addEventListener("resize", placePeekOnMobile);
   })();
 </script>
+

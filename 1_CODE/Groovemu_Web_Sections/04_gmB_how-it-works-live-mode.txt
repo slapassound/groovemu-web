@@ -9,7 +9,7 @@
   .gmB04-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a13ecaff3cbe5.74975222_2_emu_4_HOWITWORKS_LIVEMODE.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16c114391da3.04227911_emu_GIF_live_mode.gif");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */

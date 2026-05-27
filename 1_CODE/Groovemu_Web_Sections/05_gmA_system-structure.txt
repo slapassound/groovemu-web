@@ -9,7 +9,7 @@
   .gmA05-root {
     /* ===== IMAGE URL (muuda ainult seda linki, kui vahetad pilti) ===== */
     --hero-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a1428b89622f0.96852649_2_emu_5_SYSTEMSTRUCTURE.png");
-    --peek-image: url("");
+    --peek-image: url("https://d1yei2z3i6k35z.cloudfront.net/3774098/6a16c3101273b9.26106533_emu_GIF_05_structure.gif");
     --peek-video-url: "";
 
     /* ===== Siin saad tekste sättida ===== */
@@ -84,6 +84,7 @@
     --gmA05-peek-mobile-size-factor: 0.5;
     --gmA05-peek-media-opacity-percent: 50;
     --gmA05-peek-ring-overlay-opacity-percent: 50;
+    --gmA05-popup-scale: 1.5;
 
     width: 100%;
     max-width: 100%;
@@ -316,7 +317,7 @@
   .gmA05-root .gmA05-peek-card {
     position: relative;
     z-index: 2;
-    width: min(1170px, 100%);
+    width: min(calc(780px * var(--gmA05-popup-scale)), 100%);
     background: linear-gradient(160deg, #191919 0%, #121212 100%);
     border: 1px solid rgba(255, 96, 0, 0.45);
     border-radius: 12px;
